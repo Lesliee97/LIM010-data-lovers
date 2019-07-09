@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PokeMania</title>
+    <!--Iconos-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+  
+    <!--Encabezado-->
+    <header>
+      <h1>PokeMania</h1>
+      <img id="pokeIma" src="img/1.png" alt="">
+    </header>
+    <!--fin encabezado-->
+
+    <main>
+  
+      <div class="container">
+
+      <!--Inicio login-->
+
+      <div class="ventana" id="login">
+        
+        <div class="logo">
+            <img class="galerias-principal" src="img/logo1.png" alt="">
+        </div>
+
+      <div class="input-container">
+        <div class="aviso" id="mensaje"></div>
+
+        <div class="grupo">
+          <label for="usuario">Usuario:</label>
+          <div class="input-grupo">
+            <i class="fas fa-user"></i>
+            <input type="text" name="Usuario" id="usuario" placeholder="Usuario" value="LABORATORIA">
+          </div>
+        </div>
+
+        <div class="grupo">
+          <label for="Contraseña">Contraseña:</label>
+          <div class="input-grupo">
+            <i class="fas fa-key"></i>
+            <input type="password" name="Contraseña" id="contraseña" placeholder="Contraseña" value="LABORATORIA">
+          </div>
+        </div>
+        <div class="grupo-boton">
+          <button id="capturarContraseña">INGRESAR</button>
+        </div>
+      </div>
+     </div>
+    </div>
+        <!--fin formulario-->
+
+        <!--menu-->
+
+      <section class="menu" id="formularios">
+          
+        <button class="principio" id="inicio">Inicio</button>
+        
+          <select class="orden" id="ordenar-abc">
+              <option value="">ORDENAR POR</option>
+              <option value="0">Ordenar A-Z</option>
+              <option value="1">Ordenar Z-A</option>
+              <option value="2">Ordenar 001-151</option>
+              <option value="3">Ordenar 151-001</option>
+          </select>
+  
+          <select class="tipos" id="tipos">
+              <option>TIPOS DE POKEMON</option>
+              <option value="Grass">Planta</option>
+              <option value="Poison">Veneno</option>
+              <option value="Fire">Fuego</option>
+              <option value="Water">Agua</option>
+              <option value="Normal"> Normal</option>
+              <option value="Ground">Tierra</option>
+              <option value="Fighting">Lucha</option>
+              <option value="Rock">Roca</option>
+              <option value="Ice">Hielo</option>
+              <option value="Flying">Volador</option>
+              <option value="Bug">Bicho</option>
+              <option value="Electric">Eléctrico</option>
+              <option value="Psychic">Psíquico</option>
+              <option value="Ghost">Fantasma</option>
+              <option value="Dragon">Dragón</option>
+              <option value="Dark">Oscuro</option>
+              <option value="Steel">Acero</option>
+          </select>
+          <select class="tipos" id="tipos">
+            <option>DEBILIDADES</option>
+            <option value="Grass">Planta</option>
+            <option value="Poison">Veneno</option>
+            <option value="Fire">Fuego</option>
+            <option value="Water">Agua</option>
+            <option value="Normal"> Normal</option>
+            <option value="Ground">Tierra</option>
+            <option value="Fighting">Lucha</option>
+            <option value="Rock">Roca</option>
+            <option value="Ice">Hielo</option>
+            <option value="Flying">Volador</option>
+            <option value="Bug">Bicho</option>
+            <option value="Electric">Eléctrico</option>
+            <option value="Psychic">Psíquico</option>
+            <option value="Ghost">Fantasma</option>
+            <option value="Dragon">Dragón</option>
+            <option value="Dark">Oscuro</option>
+            <option value="Steel">Acero</option>
+        </select>
+  
+          <button class="salir">Salir</button>
+
+          <div id="contenedorPoke">
+           
+          </div>
+
+           
+      </section>
+     
+
+        
+        
+        
+
+        <!--FIN MENU-->
+          
+    </main>
+
+<!--
+    <footer>
+      <div class="piePagina">
+        <span  class="iconosf"><i class="far fa-copyright"></i></span>
+      Copyright 2019 by Fiorela & Leslie Todos los derechos reservados
+      </div>
+    </footer>
+-->
+
+
+
+  <!--JS-->
+
+    <!-- <script src="./data/lol/lol.js"></script> -->
+    <script src="./data/pokemon/pokemon.js"></script>
+    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  
+  </body>
+</html>
