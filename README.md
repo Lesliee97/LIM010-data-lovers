@@ -1,4 +1,4 @@
-# Data Lovers
+# PokeMania
 
 ## Índice
 
@@ -11,33 +11,36 @@
 
 ***
 
-## Preámbulo
+## Resumen
 
-Según un estudio de IBM, el 90% de la data que existe hoy ha sido creada durante 
-los últimos dos años. Cada día generamos 2.5 trillones de bytes de datos, una 
-cifra sin precedentes.
+Pokemania es un sitio web que te brinda informacion acerca de los **Pokémon** donde el usuario puede buscar por orden alfabetico **(A-Z) y (Z-A)** , de forma ascendente y descendente, tambien podra buscarlos por tipos, huevos, y frecuencia de aparición.
 
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas 
-grandes cantidades de datos se conviertan en **información** fácil de leer para 
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de 
-hacerlo es creando _interfaces_ y _visualizaciones_.
+## Historia de Usuario
 
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte 
-izquierda se puede construir una interfaz amigable y entendible por el usuario 
-al lado derecho.
+**Historia N°1:** Nuestro usuario quiere loguearse para acceder al sitio Web.
 
-![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
+**Descripción:** Podrá acceder con su nombre de usuario y una contraseña única que será **LABORATORIA** para que tenga una mayor seguridad al momento de ingresar.
 
-\* Puedes ver el detalle de la data en este [link](https://gist.github.com/lalogf/dd4aa3017a9f8aa8f90dfbca382c4dc9#file-student-json)
-y la interfaz construida en este [link](https://app.talento.laboratoria.la/profile/HFOoMpOreBU2psCcjjLg5O2EWEv2).
+**Historia N°2:** Nuestro usuario quiere poder ver todos los pokemones al ingresar a la página.
 
-## Objetivos de aprendizaje
+**Descripción:** Si el usuario y contraseña son correctos ingresará a la siguiente página donde podra visualizar los Pokémon.
 
-El objetivo principal de este proyecto es que aprendas a diseñar y construir 
-una interfaz web donde se pueda visualizar y manipular data, entendiendo lo que 
-el usuario necesita a través de las historias de usuario.
+**Historia N°3:** Nuestro usuario quiere poder elegir un Pokémon y ver las caracteristicas más revelantes.
 
-Dicho en palabras sencillas, aprenderás a:
+**Descripción:** El usuario podrá ver el peso, altura, caracteristicas, debilidades y a que tipo pertenece.
+
+**Historia N°4:** Nuestro usuario poder ordenar por orden alfabético **(A-Z y Z-A)** y frecuencia de aparición de manera ascendente **(menor a mayor)** y de manera descendente de **(mayor a menor)**.
+
+**Descripción:** El usuario podrá buscar de acuerdo a sus necesidades. 
+
+**Historia N°5:** Nuestro usuario quiere poder filtrar a los pokemones por tipo y debilidades, para saber quienes y cuántos son de cada tipo y tiene esa debilidad.
+
+**Descripción:** El usuario quiere saber de un pokémon pero no recuerda el nombre de este pero si sabe a que tipo pertenece por eso habra un filtro para facilitar su búsqueda. 
+
+**Historia N°6:** Nuestro usuario quiere obtener el porcentaje de los pokemones que aparecen en los diferentes tipos de huevo para saber que huevos eclosionar.
+
+**Descripción:** 
+
 
 - Trabajar con **historias de usuario**, y crear en equipo las **definiciones 
 de terminado (_definition of done_)** y los **criterios de aceptación** en el 
