@@ -10,7 +10,7 @@
 - [Contenido de referencia](#contenido-de-referencia)
 
 ***
-
+ 
 ## Resumen
 
 Pokemania es un sitio web que te brinda informacion acerca de los **Pokémon** donde el usuario puede buscar por orden alfabetico **(A-Z) y (Z-A)** , de forma ascendente y descendente, tambien podra buscarlos por tipos, huevos, y frecuencia de aparición.

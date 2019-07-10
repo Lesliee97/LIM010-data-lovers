@@ -73,6 +73,8 @@ const funcionDebilidad =(data,weaknesses) =>{
     return (element.weaknesses[0]=== weaknesses)
   })
 }
+
+
 window.ordenarPoke = ordenarPoke;
 window.ordenarAsc = ordenarAsc;
 window.tiposPokemon = tiposPokemon;
