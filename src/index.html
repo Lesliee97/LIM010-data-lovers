@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+    <!--fuente-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <!--Estilos-->
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -28,13 +32,15 @@
       <!--Inicio login-->
 
       <div class="ventana" id="login">
-        
         <div class="logo">
-            <img class="galerias-principal" src="img/logo1.png" alt="">
+          <img class="galerias-principal" src="img/logo1.png" alt="">
         </div>
 
       <div class="input-container">
-        <div class="aviso" id="mensaje"></div>
+
+        <!--Mensaje de No Ingresar-->
+        <div class="mensaje" id="mensaje"></div>
+        <!--Fin de No Ingresar-->
 
         <div class="grupo">
           <label for="usuario">Usuario:</label>
@@ -51,85 +57,63 @@
             <input type="password" name="Contraseña" id="contraseña" placeholder="Contraseña" value="LABORATORIA">
           </div>
         </div>
+
         <div class="grupo-boton">
           <button id="capturarContraseña">INGRESAR</button>
         </div>
+
       </div>
      </div>
     </div>
-        <!--fin formulario-->
+    
+    <!--fin Login-->
 
-        <!--menu-->
+    <!--menu-->
 
-      <section class="menu" id="formularios">
-          
-        <button class="principio" id="inicio">Inicio</button>
+    <section class="dise" id="formularios">
+
+    <div class="menu" id="menubar">
+      <button class="inicio" id="inicio">Inicio</button>
         
-          <select class="orden" id="ordenar-abc">
-              <option value="">ORDENAR POR</option>
-              <option value="0">Ordenar A-Z</option>
-              <option value="1">Ordenar Z-A</option>
-              <option value="2">Ordenar 001-151</option>
-              <option value="3">Ordenar 151-001</option>
-          </select>
-  
-          <select class="tipos" id="tipos">
-              <option>TIPOS DE POKEMON</option>
-              <option value="Grass">Planta</option>
-              <option value="Poison">Veneno</option>
-              <option value="Fire">Fuego</option>
-              <option value="Water">Agua</option>
-              <option value="Normal"> Normal</option>
-              <option value="Ground">Tierra</option>
-              <option value="Fighting">Lucha</option>
-              <option value="Rock">Roca</option>
-              <option value="Ice">Hielo</option>
-              <option value="Flying">Volador</option>
-              <option value="Bug">Bicho</option>
-              <option value="Electric">Eléctrico</option>
-              <option value="Psychic">Psíquico</option>
-              <option value="Ghost">Fantasma</option>
-              <option value="Dragon">Dragón</option>
-              <option value="Dark">Oscuro</option>
-              <option value="Steel">Acero</option>
-          </select>
-          <select class="tipos" id="tipos">
-            <option>DEBILIDADES</option>
-            <option value="Grass">Planta</option>
-            <option value="Poison">Veneno</option>
-            <option value="Fire">Fuego</option>
-            <option value="Water">Agua</option>
-            <option value="Normal"> Normal</option>
-            <option value="Ground">Tierra</option>
-            <option value="Fighting">Lucha</option>
-            <option value="Rock">Roca</option>
-            <option value="Ice">Hielo</option>
-            <option value="Flying">Volador</option>
-            <option value="Bug">Bicho</option>
-            <option value="Electric">Eléctrico</option>
-            <option value="Psychic">Psíquico</option>
-            <option value="Ghost">Fantasma</option>
-            <option value="Dragon">Dragón</option>
-            <option value="Dark">Oscuro</option>
-            <option value="Steel">Acero</option>
+        <select class="diseñoMenu" id="ordenar-abc">
+          <option value="">ORDENAR POR</option>
+          <option value="0">Ordenar A-Z</option>
+          <option value="1">Ordenar Z-A</option>
+          <option value="2">Ascendente A.</option>
+          <option value="3">Descendente A.</option>
         </select>
   
-          <button class="salir">Salir</button>
-
-          <div id="contenedorPoke">
-           
-          </div>
-
-           
-      </section>
-     
-
-        
-        
-        
-
-        <!--FIN MENU-->
+        <select class="diseñoMenu" id="tipos">
+          <option>TIPOS</option>
+          <option value="Grass">Planta</option>
+          <option value="Poison">Veneno</option>
+          <option value="Fire">Fuego</option>
+          <option value="Water">Agua</option>
+          <option value="Normal"> Normal</option>
+          <option value="Ground">Tierra</option>
+          <option value="Fighting">Lucha</option>
+          <option value="Rock">Roca</option>
+          <option value="Ice">Hielo</option>
+          <option value="Flying">Volador</option>
+          <option value="Bug">Bicho</option>
+          <option value="Electric">Eléctrico</option>
+          <option value="Psychic">Psíquico</option>
+          <option value="Ghost">Fantasma</option>
+          <option value="Dragon">Dragón</option>
+          </select>
+ 
+          <button class="salir" id="salir">Salir</button>
+        </div>
+          <div id="contenedorPoke"></div>  
           
+          <div id="atrapados"></div>
+            
+          <div id="No-atrapados"></div>
+  
+      </section> 
+
+      <!--FIN MENU-->
+        
     </main>
 
 <!--
