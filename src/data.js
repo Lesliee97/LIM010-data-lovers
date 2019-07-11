@@ -73,9 +73,14 @@ const funcionTipos = (data,type) => {
   return pokeType;
 };
 
-
-
+//HUEVOS 
+const huevoEclo = (data,kilometro) => {
+  return data.filter((elemet)=>{
+    return elemet.egg.indexOf(kilometro) >-1
+  })
+};
 
 window.ordenarPoke = ordenarPoke;
 window.ordenarAsc = ordenarAsc;
+window.huevoEclo = huevoEclo;
 
