@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PokeMania</title>
+    <link rel="icon" href="img/IconoP.ico">
     <!--Iconos-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -20,7 +21,7 @@
     <!--Encabezado-->
     <header>
       <h1>PokeMania</h1>
-      <img id="pokeIma" src="img/1.png" alt="">
+      <img id="pokeima" src="img/1.png" alt="">
     </header>
     <!--fin encabezado-->
 
@@ -53,12 +54,12 @@
           <label for="Contraseña">Contraseña:</label>
           <div class="input-grupo">
             <i class="fas fa-key"></i>
-            <input type="password" name="Contraseña" id="contraseña" placeholder="Contraseña" value="LABORATORIA">
+            <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" value="LABORATORIA">
           </div>
         </div>
 
         <div class="grupo-boton">
-          <button id="capturarContraseña">INGRESAR</button>
+          <button id="capturarcontraseña">INGRESAR</button>
         </div>
 
       </div>
@@ -74,7 +75,7 @@
     <div class="menu" id="menubar">
       <button class="inicio" id="inicio">Inicio</button>
         
-        <select class="diseñoMenu" id="ordenar-abc">
+        <select class="diseñomenu" id="ordenar-abc">
           <option value="">ORDENAR POR</option>
           <option value="0">Ordenar A-Z</option>
           <option value="1">Ordenar Z-A</option>
@@ -82,7 +83,7 @@
           <option value="3">Descendente A.</option>
         </select>
   
-        <select class="diseñoMenu" id="tipos">
+        <select class="diseñomenu" id="tipos">
           <option>TIPOS</option>
           <option value="Grass">Planta</option>
           <option value="Poison">Veneno</option>
@@ -115,11 +116,10 @@
         <div class="cuenta"> <span id="pokecuenta"></span> </div>
         <div class="cuenta"> <span id="promediototal"></span> </div>
 
+        <div> <span id="atrapados"></span> </div>
+        <div> <span id="noatrapados"></span> </div>
+
           <div id="contenedorPoke"></div>  
-          
-          <div id="atrapados"></div>
-            
-          <div id="No-atrapados"></div>
   
       </section> 
 
