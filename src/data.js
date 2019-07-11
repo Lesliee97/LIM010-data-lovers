@@ -22,6 +22,8 @@ const pokeDato = (pokemon) => {
   });
   return poke;
 };
+
+//ORDENAR DE LA A-Z Z-A
 const ordenarPoke =(data,order) =>{
 const ordenarAZ = data.sort( (a,b) => {
   if(a.name> b.name) {
@@ -42,6 +44,7 @@ if (order === '1'){
 return  0;
 };
 
+//ORDENAR ORDEN NUMERICO SPAN
 const ordenarAsc=(data,order) =>{
   const ordenarMayorMenor= data.sort( (a,b) => {
     if(a.avg_spawns > b.avg_spawns) {
@@ -62,19 +65,17 @@ const ordenarAsc=(data,order) =>{
   return  0;
   }; 
 
+//TIPOS
 const funcionTipos = (data,type) => {
   const pokeType = data.filter((element)=> {
   return (element.type[0]=== type || element.type[1]===type)
   });
   return pokeType;
 };
-const funcionDebilidad =(data,weaknesses) =>{
-  const pokeWeak = data.filter((element)=>{
-    return (element.weaknesses[0]=== weaknesses)
-  })
-}
+
+
 
 
 window.ordenarPoke = ordenarPoke;
 window.ordenarAsc = ordenarAsc;
-window.tiposPokemon = tiposPokemon;
+

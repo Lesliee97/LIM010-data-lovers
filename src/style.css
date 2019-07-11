@@ -12,7 +12,7 @@ body{
     background-size: 100% 100%;
     margin: 0px;
     padding: 0px;
-    display: flex;
+    display: flex; /*COMENTAR*/
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@ header{
     align-items: center;
     align-content: center;
     justify-content: space-between;
-   
+    background: linear-gradient(to right, #000000,#0f9b0f);   
 }
 
 header h1{
@@ -49,7 +49,7 @@ header h1{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: rgba(194, 198, 207, 0.425);
+    background: rgba(54, 88, 180, 0.425);
     border-radius: 10px;
     padding: 17px;
     width: 500px;
@@ -100,23 +100,22 @@ header h1{
 
 .input-grupo > i{
     padding: 10px;
-    border: 2px solid #222f4e;
+    border: 2px solid #050505;
     background: -webkit-linear-gradient(to right, #24CCAA, #A2DB95);
     background: linear-gradient(to right, #24CCAA, #A2DB95);
-    border-radius: 50px;
+    border-radius: 40px;
 }
 
 input{
     width: 100%;
     padding: 12px 20px;
     outline: none;
-    background: rgba(117, 115, 115, 0.431);
+    background: rgba(57, 57, 59, 0.431);
     color: white;
-    border-radius: 5px;
 }
 
 input:focus{
-    border: 2px solid #24CCAA;
+    border: 2px solid rgb(0, 136, 109);
 }
 
 .grupo-boton{
@@ -134,9 +133,8 @@ input:focus{
     border-radius: 5px;
     outline: none;
     background:  #1628c7;
-    background: -webkit-linear-gradient(to right, #24CCAA, #A2DB95);  
-    background: linear-gradient(to right, #24CCAA, #A2DB95);
-    border-radius: 50px;
+    background: -webkit-linear-gradient(to top, #023276, #454fdd);  
+    background: linear-gradient(to top, #023276, #454fdd);
     color: white;
     border: 2px solid #222f4e;
     cursor: pointer;
@@ -149,33 +147,65 @@ input:focus{
 
 .grupo-boton > button:hover{
     color: white;
-    background-color: #378B7D;
-    background: linear-gradient(to right, #639d25, #427768);
+    background: #222f4e;
 }
 
 .mensaje{
-    color: rgb(230, 141, 106);
+    background: rgb(235, 184, 136);
+    color: rgb(158, 48, 4);
     font-size: 20px;
 }
 
 .hide{
     display: none;
 }
+
+::placeholder{
+    color: rgb(195, 192, 204);
+}
+
+/*MENU POKE*/
 .flip-card {
     background-color: transparent;
-    width: 300px;
-    height: 200px;
+    width: 240px;
+    height: 400px;
     perspective: 1000px;
     display: inline-block;
     align-content: center;
     justify-content: space-around;
     margin-top: 10px;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-left: 20px;
+    cursor: pointer;
     /* Remove this if you don't want the 3D effect */
   }
   
-  /* This container is needed to position the front and back side */
+  .img-poke{
+    width: 150px;
+    height: 185px;
+    margin: auto;
+    display: block;
+  }
+
+  .estilos{
+    margin-top: 20px;
+    color:black;
+  }
+
+  .nombre{
+    color: #024959;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;   
+}
+
+.numeroPoke{
+    color: #000000;
+    text-align: center;
+    margin-top: 10px;
+}
+
+  /*Este contenedor es necesario para colocar la parte delantera y trasera. */
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -186,12 +216,12 @@ input:focus{
     
   }
   
-  /* Do an horizontal flip when you move the mouse over the flip box container */
+  /* Realice un giro horizontal cuando mueva el mouse sobre el contenedor del contenedor*/
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
   
-  /* Position the front and back side */
+  /* Posiciona la parte delantera y trasera. */
   .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -199,21 +229,85 @@ input:focus{
     backface-visibility: hidden;
   }
   
-  /* Style the front side (fallback if image is missing) */
+  /* Estilo de la parte frontal (retroceso si falta la imagen)*/
   .flip-card-front {
-    background-color:bisque;
+    background-color:rgb(196, 205, 255);
     color: black;
     border-radius: 20px;
-    border: 3px solid #F8DC2A;
+    border: 2px solid rgb(142, 144, 245);
   }
   
-  /* Style the back side */
+  /* Estilo de la parte posterior*/
   .flip-card-back {
-    background-color: #F8DC2A;
+    background-color: #030d81;
     color: black;
     transform: rotateY(180deg);
     border-radius: 30px;
-    border: 1px solid #F8DC2A;
+    border: 1px solid #060b44;
+    cursor: pointer;
   }
   
-/*MENU*/
+
+  #menubar{
+    text-decoration: none;
+    padding: 15px 15px;
+    font-weight: 600;
+    font-size: 21px;
+    color: white;
+ 
+    display: flex;
+    justify-content: center;
+  }
+
+  .inicio{
+     width: 100px;
+     height: 50px;
+     border-radius: 4px;
+     background-color: #060b44;
+     color: white;
+     margin-right: 5px;
+     cursor: pointer;
+  }
+
+  .inicio:hover{
+    background-color: #0546a0;  
+  }
+
+  .diseñoMenu{
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #060b44;
+    color: white;
+    margin-right: 5px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .diseñoMenu:hover{
+    background-color: #0546a0;  
+  }
+.salir{
+    width: 100px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #060b44;
+    color: white;
+    margin-right: 5px;
+    cursor: pointer; 
+}
+
+.salir:hover{
+    background-color: #0546a0;  
+  }
+
+  /*LOGO CARDS*/
+  .imagen-logo{
+    width: 200px;
+    margin-top: 80px;
+  }
+
+  .imagen-pokego{
+    width: 200px;
+    height: 180px;
+  }
