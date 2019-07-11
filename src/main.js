@@ -73,10 +73,11 @@ const mostrarPoke = (pokemon) => {
 
                     <div class="estilos">
                     <h4>Tipo: ${pokemon[i].type}</h4>
-                    <h4>Alto: ${pokemon[i].height}</h4>
-                    <h4>Ancho: ${pokemon[i].weight}</h4>
+                    <h4>Altura: ${pokemon[i].height}</h4>
+                    <h4>Peso: ${pokemon[i].weight}</h4>
                     <h4>Spaw: ${pokemon[i].avg_spawns}</h4>
-                    <h4>Tiempo Apariccion: ${pokemon[i].spawn_time}</h4>        
+                    <h4>Tiempo Aparición: ${pokemon[i].spawn_time}</h4>
+                    <h4>Huevos: ${pokemon[i].egg}</h4>          
                     </div>
                 </div>
 
@@ -131,6 +132,22 @@ tipos.addEventListener('change',() => {
   })
 
 
+  //HUEVOS
+  const huevos = document.getElementById('huevos');
+  huevos.addEventListener('change', () => {
+    const totalHuevo = huevoEclo(pokeData,huevos.value);
+    contenedorPoke.innerHTML=mostrarPoke(totalHuevo)
+    //div span  inner.htm
+    
+    const totalCount= totalHuevo.length;
+    pokecuenta.innerHTML = "Resultados Encontrados: " + totalCount;
+    //html span promedio
+    const promedio = totalCount / 151 * 100;
+    promediototal.innerHTML="Porcentaje Total: " + parseInt(promedio) + "%";
+
+
+  });
+
   //ATRAPANDO Y NO ATRAPANDO POKEMONES
 
   let contadorAtrapado = 0;
@@ -144,5 +161,8 @@ tipos.addEventListener('change',() => {
 		contadorAtrapado++
 	  }
   }
+  
   document.getElementById('atrapados').innerHTML = "Pokemones Atrapados "  + " " + contadorAtrapado;
   document.getElementById('No-atrapados').innerHTML = "Pokemones no atrapados " + " " + contadorNoatrapado;
+
+  //HUEVOS ECLOSIONAR
