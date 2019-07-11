@@ -70,20 +70,17 @@ const mostrarPoke = (pokemon) => {
                     <h2 class="numeroPoke"> N° ${pokemon[i].num}</h2>
                     <img class="img-poke" src= "${pokemon[i].img}"/>
                     <h2 class="nombre">${pokemon[i].name}</h2>
-
-                    <div class="estilos">
-                    <h4>Tipo: ${pokemon[i].type}</h4>
-                    <h4>Altura: ${pokemon[i].height}</h4>
-                    <h4>Peso: ${pokemon[i].weight}</h4>
-                    <h4>Spaw: ${pokemon[i].avg_spawns}</h4>
-                    <h4>Tiempo Aparición: ${pokemon[i].spawn_time}</h4>
-                    <h4>Huevos: ${pokemon[i].egg}</h4>          
-                    </div>
                 </div>
 
                 <div class="flip-card-back">
-                <img class="imagen-logo" src="img/nombre.png"/>
-                <img class="imagen-pokego" src="img/pokego.png"/>
+                <div class="estilos">
+                <h4>Tipo: ${pokemon[i].type}</h4>
+                <h4>Altura: ${pokemon[i].height}</h4>
+                <h4>Peso: ${pokemon[i].weight}</h4>
+                <h4>Spaw: ${pokemon[i].avg_spawns}</h4>
+                <h4>Tiempo Aparición: ${pokemon[i].spawn_time}</h4>
+                <h4>Huevos: ${pokemon[i].egg}</h4>          
+                </div>
                 </div>
             </div>
         </div>`;
@@ -165,7 +162,4 @@ tipos.addEventListener('change',() => {
   document.getElementById('atrapados').innerHTML = "Pokemones Atrapados "  + " " + contadorAtrapado;
   document.getElementById('No-atrapados').innerHTML = "Pokemones no atrapados " + " " + contadorNoatrapado;
 
-<<<<<<< HEAD
-=======
   //HUEVOS ECLOSIONAR
->>>>>>> 57a50abed86c0ae25bc588b8b81fba1f643f1872
