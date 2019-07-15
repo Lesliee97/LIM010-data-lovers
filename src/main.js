@@ -127,6 +127,10 @@ casa.addEventListener('click', () => {
   formularios.classList.add('hide');
   cabeza.classList.remove('hide');
   contenedorPoke.classList.add('hide');
+  atrapados.classList.add('hide');
+  noatrapados.classList.add('hide');
+  pokecuenta.classList.add('hide');
+  promediototal.classList.add('hide');
   usuario.value = '';
   contraseña.value = '';
 });
