@@ -20,20 +20,25 @@ body{
 }
 
 header{
-    width: 100%;
-    padding: 10px 60;
-    color: white; 
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
-    background:linear-gradient(to right, #000000,#0f9b0f);  
+     /* Activamos flex. */
+     display: flex; 
+     /* extendemos los elmentos dentro de la cabecera. */
+     justify-content: space-between;
+     /* Alineamos el contenido verticalmente dentro de la cabecera. */
+     align-items: center;
+  padding: 0%;
+     color: #fff;
+     background-color: #ccebff;
 }
 
-header h1{
-    margin-left: 30px;
-    font-size: 25px;
+@media (max-width: 1000px){
+    header{
+        /* revertimos la cabecera haciendola vertical. */
+        flex-direction: column;
+        /* alinemamos el contenido al comienzo (a la izquierda) de la cabecera. */
+        align-items: flex-start;
+    }
+
 }
 #pokeima{
     width: 4%;
