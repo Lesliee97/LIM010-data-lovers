@@ -12,7 +12,7 @@ const login = document.getElementById('login');
 const formularios = document.getElementById('formularios');
 
 
-formularios.classList.add('hide');
+// formularios.classList.add('hide');
 
 // Ingreso login 
 
@@ -30,6 +30,12 @@ clave.addEventListener('click', () => {
   if (usuario === 'LABORATORIA' && contraseña === 'LABORATORIA') {
     elemento.classList.add('hide');
     pantallaDos.classList.remove('hide');
+    document.getElementById('cabeza').classList.add('hide');
+    document.getElementById('contenedorPoke').classList.remove('hide');
+    document.getElementById('atrapados').classList.remove('hide');
+    document.getElementById('noatrapados').classList.remove('hide');
+    document.getElementById('pokecuenta').classList.add('hide');
+    document.getElementById('promediototal').classList.add('hide');
   }
   if (usuario !== 'LABORATORIA' && contraseña !== 'LABORATORIA') {
     contar++;
@@ -65,18 +71,20 @@ const mostrarPoke = (pokemon) => {
                     <h2 class="numeroPoke"> N° ${pokemon[i].num}</h2>
                     <img class="img-poke" src= "${pokemon[i].img}"/>
                     <h2 class="nombre">${pokemon[i].name}</h2>
-                    <div class="estilos">
-                    <h4>Tipo: ${pokemon[i].type}</h4>
-                    <h4>Altura: ${pokemon[i].height}</h4>
-                    <h4>Peso: ${pokemon[i].weight}</h4>
-                    <h4>Spaw: ${pokemon[i].avg_spawns}</h4>
-                    <h4>Tiempo Aparición: ${pokemon[i].spawn_time}</h4>
-                    <h4>Huevos: ${pokemon[i].egg}</h4>          
-                    </div>
+                    <h4 class="tipo">Tipo: ${pokemon[i].type}</h4>
+                    <h4 class="tipo">Frec. Aparición: ${pokemon[i].spawn_chance}</h4>
                 </div>
                 <div class="flip-card-back">
-                <img class="imagen-logo" src="img/nombre.png"/>
-                <img class="imagen-pokego" src="img/pokego.png"/>
+                  <div class="estilos">
+                    <h2 class="nombre-back">${pokemon[i].name}</h2>
+                    <h4 class="caracteristicas">Altura: ${pokemon[i].height}</h4>
+                    <h4 class="caracteristicas">Peso: ${pokemon[i].weight}</h4>
+                    <h4 class="caracteristicas">Huevos: ${pokemon[i].egg}</h4>
+                    <h4 class="caracteristicas">Tiempo Aparición: ${pokemon[i].spawn_time}</h4>
+                    <h4 class="caracteristicas">Debilidades: ${pokemon[i].weaknesses}</h4>
+                                  
+                </div>
+                
                 </div>
             </div>
         </div>`;
@@ -116,6 +124,12 @@ const casa = document.getElementById('salir');
 casa.addEventListener('click', () => {
   login.classList.remove('hide');
   formularios.classList.add('hide');
+  cabeza.classList.remove('hide');
+  contenedorPoke.classList.add('hide');
+  atrapados.classList.add('hide');
+  noatrapados.classList.add('hide');
+  pokecuenta.classList.add('hide');
+  promediototal.classList.add('hide');
   usuario.value = '';
   contraseña.value = '';
 });
@@ -123,6 +137,12 @@ casa.addEventListener('click', () => {
 // HUEVOS
 const huevos = document.getElementById('huevos');
 huevos.addEventListener('change', () => {
+  atrapados.classList.add('hide');
+  noatrapados.classList.add('hide');
+ 
+  pokecuenta.classList.remove('hide');
+  promediototal.classList.remove('hide');
+
   const totalHuevo = huevoEclo(pokeData, huevos.value);
   contenedorPoke.innerHTML = mostrarPoke(totalHuevo);
   // div span  inner.htm
