@@ -3,41 +3,101 @@
 ## Índice
 
 - [Índice](#índice)
-- [Preámbulo](#preámbulo)
-- [Objetivos de aprendizaje](#objetivos-de-aprendizaje)
-- [Consideraciones generales](#consideraciones-generales)
-- [Requerimientos del proyecto](#requerimientos-del-proyecto)
-- [Contenido de referencia](#contenido-de-referencia)
+- [Preámbulo](#Preámbulo)
+- [Resumen](#Resumen)
+- [Historias de Usuario](#Historias-de-Usuario)
+- [Prototipo de baja fidelidad](#Prototipo-de-baja-fidelidad)
+- [Prototipo de Alta fidelidad en Figma](#Prototipo-de-Alta-fidelidad-en-Figma)
 
 ***
+ 
+# Preámbulo
+**Pokemon Go** es un videojuego de realidad aumentada basada en la localizacion. El juego consiste en buscar y capturar personajes de la saga Pokémon escondidos en ubicaciones del mundo real y luchar con ellos, lo que implica desplazarse físicamente por las calles de la ciudad para progresar.
 
-## Resumen
+Este juego es muy popular entre ninos y jovenes y adultos ,debido a que es un juego simple , facil de jugar . Lo pueden jugar tanto aficionados de la serie Pokemon como personas sin conocimiento previo de este. 
 
-Pokemania es un sitio web que te brinda informacion acerca de los **Pokémon** donde el usuario puede buscar por orden alfabetico **(A-Z) y (Z-A)** , de forma ascendente y descendente, tambien podra buscarlos por tipos, huevos, y frecuencia de aparición.
+Es un juego novedoso e innovador ya que para poder jugarlo y subir de niveles, tienes salir a las calles y visitar puntos concretos . 
 
-## Historia de Usuario
+# Resumen
 
-**Historia N°1:** Nuestro usuario quiere loguearse para acceder al sitio Web.
+**¿QUE ES POKEMANIA?**
 
-**Descripción:** Podrá acceder con su nombre de usuario y una contraseña única que será **LABORATORIA** para que tenga una mayor seguridad al momento de ingresar.
+*Pokemania* es un sitio web en la cual puedes acceder a informacion basica sobre los pokemon de la region Kanto , ayudando al Usuario en su busqueda por alguno o varios pokemones en concreto de manera mas efectiva y rapida  . Para poder ingresar el Usuario necesita una cuenta con su nombre y contrasena .
 
-**Historia N°2:** Nuestro usuario quiere poder ver todos los pokemones al ingresar a la página.
+# Historias de Usuario
 
-**Descripción:** Si el usuario y contraseña son correctos ingresará a la siguiente página donde podra visualizar los Pokémon.
+*¿Quien es nuestro Usuario?*
+Es un jugador de pokemon go con conocimientos basicos de Pokemones, juega en sus ratos libres. Nuestro Usuario desea que la pagina tenga la siguiente funcionalidad:
 
-**Historia N°3:** Nuestro usuario quiere poder elegir un Pokémon y ver las caracteristicas más revelantes.
+*Historia N°1:*
 
-**Descripción:** El usuario podrá ver el peso, altura, caracteristicas, debilidades y a que tipo pertenece.
+-**COMO:** Jugador de Pokémon Go.
 
-**Historia N°4:** Nuestro usuario poder ordenar por orden alfabético **(A-Z y Z-A)** y frecuencia de aparición de manera ascendente **(menor a mayor)** y de manera descendente de **(mayor a menor)**.
+-**QUIERO:** Poder loguearme para acceder al sitio web
 
-**Descripción:** El usuario podrá buscar de acuerdo a sus necesidades. 
+-**PARA:** Que tenga mayor seguridad al ingresar
 
-**Historia N°5:** Nuestro usuario quiere poder filtrar a los pokemones por tipo y debilidades, para saber quienes y cuántos son de cada tipo y tiene esa debilidad.
+*Historia N°2:*
 
-**Descripción:** El usuario quiere saber de un pokémon pero no recuerda el nombre de este pero si sabe a que tipo pertenece por eso habra un filtro para facilitar su búsqueda. 
+-**COMO** : Jugador
 
-**Historia N°6:** Nuestro usuario quiere obtener el porcentaje de los pokemones que aparecen en los diferentes tipos de huevo para saber que huevos eclosionar.
+-**QUIERO**: Poder ver todos los pokemones al ingresar a la pagina
 
-**Descripción:** 
-Hola
+-**PARA** : Visualizar cuantos pokemones tengo y cuantos me falta por atrapar
+
+*Historia N°3:* 
+
+-**COMO** : Jugador
+
+-**QUIERO**: Quiero poder elegir un pokemon 
+
+-**PARA**: Poder vizualizar sus caracteristicas mas relevantes(nombre,tipo,debilidades,etc)
+
+*Historia N°4:*
+
+-**COMO** :Jugador
+
+-**QUIERO**: Poder ordenar por orden alfabetico **(A-Z y Z-A)**  y frecuencia de aparicion de  manera ascendente y descendente.
+
+-**PARA**: Poder ubicarlos fácilmente y saber cuáles son los más difíciles de atrapar.
+
+*Historia N°5:* 
+
+-**COMO**: Jugador
+
+-**QUIERO**: Filtrar a los pokemones por tipo y debilidades
+
+-**PARA**: Saber quienes y cuantos son de cada tipo y quienes tienen esa debilidades.
+
+*Historia N°6:* 
+
+-**COMO**: Jugador
+
+-**QUIERO**: Obtener el porcentaje de los pokemones que aparecen en los diferentes tipo de huevo
+
+-**PARA**: Saber que huevos eclocionar.
+
+# Prototipo de baja fidelidad
+
+ ## *Prototipo en movil*
+
+![Imagen de iOS (7)](https://user-images.githubusercontent.com/50469947/61114710-8b234d00-a456-11e9-8282-089a4c4b3b8d.jpg)
+![Imagen de iOS (2)](https://user-images.githubusercontent.com/50469947/61114729-96767880-a456-11e9-88e9-87cfc83a58c8.jpg)
+![Imagen de iOS (1)](https://user-images.githubusercontent.com/50469947/61114772-aa21df00-a456-11e9-9ad7-720488c6f054.jpg)
+![Imagen de iOS (3)](https://user-images.githubusercontent.com/50469947/61114786-af7f2980-a456-11e9-81b6-8f961d7e2e99.jpg)
+
+ ## *Prototipo en Web*
+
+![Imagen de iOS (4)](https://user-images.githubusercontent.com/50469947/61114815-bc9c1880-a456-11e9-861a-978e40234489.jpg)
+![Imagen de iOS (5)](https://user-images.githubusercontent.com/50469947/61114817-bc9c1880-a456-11e9-8674-b193ad9381cc.jpg)
+![Imagen de iOS (6)](https://user-images.githubusercontent.com/50469947/61114818-bd34af00-a456-11e9-9e4e-30a75051cadf.jpg)
+
+## *FEEDBACK:*
+
+
+
+# Prototipo de Alta fidelidad en Figma
+//aqui ira mis imagenes
+
+## FEEDBACk
+

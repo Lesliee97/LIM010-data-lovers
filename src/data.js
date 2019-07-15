@@ -43,7 +43,7 @@ const ordenarPoke = (data, order) => {
     return ordenarAZ.reverse();
   }
   return 0;
-};
+};J 
 
 // ORDENAR ORDEN NUMERICO SPAN
 const ordenarAsc = (data, order) => {

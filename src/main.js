@@ -74,7 +74,6 @@ const mostrarPoke = (pokemon) => {
                     <h4 class="tipo">Tipo: ${pokemon[i].type}</h4>
                     <h4 class="tipo">Frec. Aparición: ${pokemon[i].spawn_chance}</h4>
                 </div>
-
                 <div class="flip-card-back">
                   <div class="estilos">
                     <h2 class="nombre-back">${pokemon[i].name}</h2>
