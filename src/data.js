@@ -74,6 +74,13 @@ const funcionTipos = (data, type) => {
   return pokeType;
 };
 
+// DEBILIDADES
+const funcionDebilidades = (data, debilidad)=>{
+  return data.filter((elemento) => {
+    return elemento.weaknesses.indexOf(debilidad) > -1;
+  });
+};
+
 // HUEVOS 
 const huevoEclo = (data, kilometro) => {
   return data.filter((elemet) => {

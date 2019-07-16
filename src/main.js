@@ -100,24 +100,35 @@ contenedorPoke.innerHTML = mostrarPoke(pokeData);
 
 // ORDENAR DE LA A-Z Z-A
 
-const ordenando = document.getElementById('ordenar-abc');
-ordenando.addEventListener('change', () => {
-  if (ordenando.value === '0' || ordenando.value === '1') {
-    const pokeOrdenado = ordenarPoke(pokeData, ordenando.value);
+const ordenandoAbc = document.getElementById('ordenar-abc');
+ordenandoAbc.addEventListener('change', () => {
+  if (ordenandoAbc.value === '0' || ordenandoAbc.value === '1') {
+    const pokeOrdenado = ordenarPoke(pokeData, ordenandoAbc.value);
     contenedorPoke.innerHTML = mostrarPoke(pokeOrdenado);
-  }
-  if (ordenando.value === '2' || ordenando.value === '3') {
-    const pokeOrdenadoAsc = ordenarAsc(pokeData, ordenando.value);
-    console.log(pokeOrdenadoAsc);
-    contenedorPoke.innerHTML = mostrarPoke(pokeOrdenadoAsc);
   }
 });
 
+// ORDEN DE FRECUENCIA DE APARICION
+
+const ordenandoAsc = document.getElementById('ordenar-spawn');
+ordenandoAsc.addEventListener('change', () => {
+  if (ordenandoAsc.value === '2' || ordenandoAsc.value === '3') {
+    const pokeOrdenadoAsc = ordenarAsc(pokeData, ordenandoAsc.value);
+    contenedorPoke.innerHTML = mostrarPoke(pokeOrdenadoAsc);
+  }
+});
 // TIPOS
 const tipos = document.getElementById('tipos');
 tipos.addEventListener('change', () => {
   const typePoke = funcionTipos(pokeData, tipos.value);
   contenedorPoke.innerHTML = mostrarPoke(typePoke);
+});
+
+// DEBILIDADES
+const debilidadPoke = document.getElementById('debilidadp');
+debilidadPoke.addEventListener('change', () =>{
+  const weakPoke = funcionDebilidades(pokeData, debilidadPoke.value);
+  contenedorPoke.innerHTML = mostrarPoke(weakPoke);
 });
 
 // SALIR

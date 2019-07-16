@@ -62,17 +62,17 @@ header > h1 {
 }
 
 
-main{
+/* main{
 
 }
-
+ */
 
 
 .ventana{
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: rgba(54, 88, 180, 0.425);
+  background: rgba(54, 88, 180, 0.596);
   border-radius: 10px;
   padding: 17px;
   width: 400px;
@@ -179,6 +179,14 @@ input:focus{
   background: #222f4e;
 }
 
+@media only screen and (max-width: 1024px){
+  .grupo-boton > button{
+      width: 50%;
+      height: 50px;
+  }
+}
+
+
 .mensaje{
   background: rgb(235, 184, 136);
   color: rgb(158, 48, 4);
@@ -199,6 +207,13 @@ input:focus{
   margin-top:  -95px;
 }
 
+@media only screen and (max-width: 1024px){
+  .logo{
+      width: 80%;
+      height: 150px;
+      margin-top:  -75px;
+  }
+}
 
 #formularios{
   width: 100%;
