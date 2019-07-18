@@ -3,26 +3,24 @@
 ## Índice
 
 - [Índice](#índice)
-- [Preámbulo](#Preámbulo)
+- [Definición](#Definición)
 - [Resumen](#Resumen)
 - [Historias de Usuario](#Historias-de-Usuario)
 - [Prototipo de baja fidelidad](#Prototipo-de-baja-fidelidad)
 - [Prototipo de Alta fidelidad en Figma](#Prototipo-de-Alta-fidelidad-en-Figma)
-
-***
  
-# Preámbulo
-**Pokemon Go** es un videojuego de realidad aumentada basada en la localizacion. El juego consiste en buscar y capturar personajes de la saga Pokémon escondidos en ubicaciones del mundo real y luchar con ellos, lo que implica desplazarse físicamente por las calles de la ciudad para progresar.
+# Definición
+**Pokemon Go** es un videojuego de realidad aumentada basada en la localizacion. El juego consiste en buscar y capturar personajes de la saga Pokémon escondidos en ubicaciones del mundo real y luchar con ellos, lo que implica desplazarse por las calles de la ciudad, para atrapar a sus pokemones.
 
-Este juego es muy popular entre ninos y jovenes y adultos ,debido a que es un juego simple , facil de jugar . Lo pueden jugar tanto aficionados de la serie Pokemon como personas sin conocimiento previo de este. 
-
-Es un juego novedoso e innovador ya que para poder jugarlo y subir de niveles, tienes salir a las calles y visitar puntos concretos . 
+Este juego es muy popular entre niños y jóvenes y adultos ,debido a que es un juego simple, fácil de jugar . Pueden acceder a la aplicación todas la personas que deseen jugar. 
 
 # Resumen
 
 **¿QUE ES POKEMANIA?**
 
-*Pokemania* es un sitio web en la cual puedes acceder a informacion basica sobre los pokemon de la region Kanto , ayudando al Usuario en su busqueda por alguno o varios pokemones en concreto de manera mas efectiva y rapida  . Para poder ingresar el Usuario necesita una cuenta con su nombre y contrasena .
+**Pokemania** es un sitio web en la cual puedes acceder a la información básica sobre los pokemones de la región Kanto, ayudando al Usuario en su búsqueda por uno o varios pokemones en concreto de manera mas efectiva y rápida.
+
+Para poder ingresar se necesita su nombre de usuario **LABORATORIA** y su contraseña **LABORATORIA** si los datos ingresados son incorrectos te saldra un mensaje.
 
 # Historias de Usuario
 
