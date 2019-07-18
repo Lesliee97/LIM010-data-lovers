@@ -3,25 +3,26 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
-const pokeDato = (pokemon) => {
-  const poke = [];
-  for (let i = 0; i < pokemon.length; i++);
-  poke.push({
-    id: pokemon[i].id,
-    numero: pokemon[i].num,
-    nombre: pokemon[i].name,
-    img: pokemon[i].img,
-    tipo: pokemon[i].type,
-    altura: pokemon[i].height,
-    peso: pokemon[i].weight,
-    caramelos: pokemon[i].candy_count,
-    huevo: pokemon[i].egg,
-    aparicion: pokemon[i].avg_spawns,
-    multipliers: pokemon[i].multipliers,
-    debilidad: pokemon[i].weaknesses,
-  });
-  return poke;
-};
+// TRAER LOS DATOS DE LA DATA POKEMON
+// const pokeDato = (pokemon) => {
+//   const poke = [];
+//   for (let i = 0; i < pokemon.length; i++) ; // RESULTADO DE LOS 151 POKEMOS
+//   poke.push({
+//     id: pokemon[i].id,
+//     numero: pokemon[i].num,
+//     nombre: pokemon[i].name,
+//     img: pokemon[i].img,
+//     tipo: pokemon[i].type,
+//     altura: pokemon[i].height,
+//     peso: pokemon[i].weight,
+//     caramelos: pokemon[i].candy_count,
+//     huevo: pokemon[i].egg,
+//     aparicion: pokemon[i].avg_spawns,
+//     multipliers: pokemon[i].multipliers,
+//     debilidad: pokemon[i].weaknesses,
+//   });
+//   return poke;
+// };
 
 // ORDENAR DE LA A-Z Z-A
 const ordenarPoke = (data, order) => {
@@ -43,7 +44,7 @@ const ordenarPoke = (data, order) => {
     return ordenarAZ.reverse();
   }
   return 0;
-};J 
+};
 
 // ORDENAR ORDEN NUMERICO SPAN
 const ordenarAsc = (data, order) => {
@@ -74,6 +75,13 @@ const funcionTipos = (data, type) => {
   return pokeType;
 };
 
+// DEBILIDADES
+const funcionDebilidades = (data, debilidad)=>{
+  return data.filter((elemento) => {
+    return elemento.weaknesses.indexOf(debilidad) > -1;
+  });
+};
+
 // HUEVOS 
 const huevoEclo = (data, kilometro) => {
   return data.filter((elemet) => {
@@ -81,13 +89,21 @@ const huevoEclo = (data, kilometro) => {
   });
 };
 
+// DATA
+const busco = (data, buscado) => {
+  return data.filter(obj => obj.name.toLowerCase().startsWith(buscado));
+};
+
 window.ordenarPoke = ordenarPoke;
 window.ordenarAsc = ordenarAsc;
+window.funcionTipos = funcionTipos;
+window.funcionDebilidades = funcionDebilidades;
 window.huevoEclo = huevoEclo;
+window.busco = busco;
 
 // jest test
-// const example=(str)=>{
+// const example = (str)=>{
 //   const mayuscula = str.toUpperCase();
 //   return mayuscula;
-// }
-// window example = example;
+// };
+// window.example = example;

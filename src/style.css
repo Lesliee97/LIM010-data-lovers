@@ -61,18 +61,11 @@ header > h1 {
 
 }
 
-
-main{
-
-}
-
-
-
 .ventana{
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: rgba(54, 88, 180, 0.425);
+  background: rgba(54, 88, 180, 0.596);
   border-radius: 10px;
   padding: 17px;
   width: 400px;
@@ -114,6 +107,7 @@ main{
   flex-direction: column;
   padding: 10px;
   width: 100%;
+  margin-top: 8px;
 }
 
 .input-grupo{
@@ -179,10 +173,19 @@ input:focus{
   background: #222f4e;
 }
 
+@media only screen and (max-width: 1024px){
+  .grupo-boton > button{
+      width: 50%;
+      height: 50px;
+  }
+}
+
+
 .mensaje{
   background: rgb(235, 184, 136);
   color: rgb(158, 48, 4);
   font-size: 20px;
+  margin-top: 100px;
 }
 
 .hide{
@@ -199,10 +202,16 @@ input:focus{
   margin-top:  -95px;
 }
 
+@media only screen and (max-width: 1024px){
+  .logo{
+      width: 80%;
+      height: 150px;
+      margin-top:  -75px;
+  }
+}
 
 #formularios{
   width: 100%;
-  height: 80px;
   width: 100%;
   background: #1c2938;
   text-align: center;
@@ -211,11 +220,15 @@ input:focus{
   width: 100%;
   }
 
-#contenedorPoke{
-  background: #f8f8dd;
+#contenedorpoke{
+  background: rgba(54, 88, 180, 0.411);
   width: 80%;
   text-align: center;
-  padding: 0 50px 0 0;
+  padding: 20 50px 0 0;
+  border-radius: 10px;
+  -webkit-box-shadow:25px 24px 24px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow:25px 24px 24px -9px rgba(0,0,0,0.75);
+  box-shadow: 25px, 24px 24px -9px rgba(0, 0, 0, 0.75);
    /* display: flex;
   align-items: center;
   flex-direction: row;
@@ -359,7 +372,7 @@ input:focus{
 
 
 
-.diseñomenu{
+.disemenu{
   width: 150px;
   height: 50px;
   border-radius: 4px;
@@ -370,7 +383,7 @@ input:focus{
   cursor: pointer;
 }
 
-.diseñomenu:hover{
+.disemenu:hover{
   background-color: #0546a0;  
 }
 .salir{
@@ -415,7 +428,7 @@ cursor: pointer;
 
 .cuenta{
   width: 40%;
-  height: 40px;
+
   font-size: 25px;
   color:white;
   margin-top: 10px;
@@ -445,4 +458,59 @@ cursor: pointer;
   border-radius: 2px;
   margin: 5px;
 
+}
+
+
+/* BUSCADOR */
+.search-texto{
+  width: 0px; 
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s; 
+  line-height: 40px;
+  }
+.search-box{
+  position: absolute;
+  top: 18%;
+  left: 80%;
+  transform: translate(-50%,-50%);
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.search-btn{
+  color: #4986f7;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display:flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.search-box:hover > .search-texto{
+  width: 100px;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+.piePagina{
+    
+  background-color: #1c2630;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-left: -50%;
+  color: rgb(255, 255, 255);
 }

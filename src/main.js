@@ -1,10 +1,10 @@
 /* Manejo del DOM */
 const mensaje = document.getElementById('mensaje');
-const clave = document.getElementById('capturarcontraseña');
+const clave = document.getElementById('capturarcontrasena');
 const usuario = document.getElementById('usuario');
-const contraseña = document.getElementById('contraseña');
-const contenedorPoke = document.getElementById('contenedorPoke');
-const pokeData = POKEMON.pokemon;
+const contrasena = document.getElementById('contrasena');
+const contenedorpoke = document.getElementById('contenedorpoke');
+const pokeData = POKEMON.pokemon; // ESTAMOS TRAYENDO NUESTRA DATA POKEMON
 const inicio = document.getElementById('inicio');
 
 
@@ -25,34 +25,36 @@ pantallaDos.classList.add('hide');
 
 clave.addEventListener('click', () => {
   const usuario = document.getElementById('usuario').value;
-  const contraseña = document.getElementById('contraseña').value;
+  const contrasena = document.getElementById('contrasena').value;
 
-  if (usuario === 'LABORATORIA' && contraseña === 'LABORATORIA') {
+  if (usuario === 'LABORATORIA' && contrasena === 'LABORATORIA') {
     elemento.classList.add('hide');
     pantallaDos.classList.remove('hide');
     document.getElementById('cabeza').classList.add('hide');
-    document.getElementById('contenedorPoke').classList.remove('hide');
+    document.getElementById('contenedorpoke').classList.remove('hide');
     document.getElementById('atrapados').classList.remove('hide');
     document.getElementById('noatrapados').classList.remove('hide');
     document.getElementById('pokecuenta').classList.add('hide');
     document.getElementById('promediototal').classList.add('hide');
+    document.getElementById('encontrarpoke').classList.remove('hide');
+    document.getElementById('botonbusca').classList.remove('hide');
   }
-  if (usuario !== 'LABORATORIA' && contraseña !== 'LABORATORIA') {
+  if (usuario !== 'LABORATORIA' && contrasena !== 'LABORATORIA') {
     contar++;
 
-    contraseña.value = '';
+    contrasena.value = '';
 
     if (contar < intentos) {
-      mensaje.innerHTML = 'Contraseña Incorrecta. Vuelva Intentarlo';
+      mensaje.innerHTML = 'contrasena Incorrecta. Vuelva Intentarlo';
     } else {
       usuario.disabled = true;
 
-      contraseña.disabled = true;
+      contrasena.disabled = true;
 
       mensaje.innerHTML = 'Ya utilizastes todos tus intentos';
     }
   } else {
-    mensaje.innerHTML = 'Ingrese Contraseña';
+    mensaje.innerHTML = 'Ingrese contrasena';
   }
 });
 
@@ -63,7 +65,7 @@ clave.addEventListener('click', () => {
 // let pokemon = arrOrderAZ
 const mostrarPoke = (pokemon) => {
   let mostrar = ' ';
-  for (let i = 0; i < pokemon.length; i++) {
+  for (let i = 0; i < pokemon.length; i++) { // MUESTRE LOS 151 POKEMONES
     let llamar = `
         <div class="flip-card">
             <div class="flip-card-inner">
@@ -74,6 +76,7 @@ const mostrarPoke = (pokemon) => {
                     <h4 class="tipo">Tipo: ${pokemon[i].type}</h4>
                     <h4 class="tipo">Frec. Aparición: ${pokemon[i].spawn_chance}</h4>
                 </div>
+
                 <div class="flip-card-back">
                   <div class="estilos">
                     <h2 class="nombre-back">${pokemon[i].name}</h2>
@@ -95,28 +98,39 @@ const mostrarPoke = (pokemon) => {
   return mostrar;
 };
 
-contenedorPoke.innerHTML = mostrarPoke(pokeData);
+contenedorpoke.innerHTML = mostrarPoke(pokeData); // PINTANDO CONTENEDOR POKE INER
 
 // ORDENAR DE LA A-Z Z-A
 
-const ordenando = document.getElementById('ordenar-abc');
-ordenando.addEventListener('change', () => {
-  if (ordenando.value === '0' || ordenando.value === '1') {
-    const pokeOrdenado = ordenarPoke(pokeData, ordenando.value);
-    contenedorPoke.innerHTML = mostrarPoke(pokeOrdenado);
-  }
-  if (ordenando.value === '2' || ordenando.value === '3') {
-    const pokeOrdenadoAsc = ordenarAsc(pokeData, ordenando.value);
-    console.log(pokeOrdenadoAsc);
-    contenedorPoke.innerHTML = mostrarPoke(pokeOrdenadoAsc);
+const ordenandoAbc = document.getElementById('ordenar-abc');
+ordenandoAbc.addEventListener('change', () => {
+  if (ordenandoAbc.value === '0' || ordenandoAbc.value === '1') { // || = O
+    const pokeOrdenado = ordenarPoke(pokeData, ordenandoAbc.value);
+    contenedorpoke.innerHTML = mostrarPoke(pokeOrdenado);
   }
 });
 
+// ORDEN DE FRECUENCIA DE APARICION
+
+const ordenandoAsc = document.getElementById('ordenar-spawn');
+ordenandoAsc.addEventListener('change', () => {
+  if (ordenandoAsc.value === '2' || ordenandoAsc.value === '3') {
+    const pokeOrdenadoAsc = ordenarAsc(pokeData, ordenandoAsc.value);
+    contenedorpoke.innerHTML = mostrarPoke(pokeOrdenadoAsc);
+  }
+});
 // TIPOS
 const tipos = document.getElementById('tipos');
 tipos.addEventListener('change', () => {
   const typePoke = funcionTipos(pokeData, tipos.value);
-  contenedorPoke.innerHTML = mostrarPoke(typePoke);
+  contenedorpoke.innerHTML = mostrarPoke(typePoke);
+});
+
+// DEBILIDADES
+const debilidadPoke = document.getElementById('debilidadp');
+debilidadPoke.addEventListener('change', () =>{
+  const weakPoke = funcionDebilidades(pokeData, debilidadPoke.value);
+  contenedorpoke.innerHTML = mostrarPoke(weakPoke);
 });
 
 // SALIR
@@ -125,7 +139,7 @@ casa.addEventListener('click', () => {
   login.classList.remove('hide');
   formularios.classList.add('hide');
   cabeza.classList.remove('hide');
-  contenedorPoke.classList.add('hide');
+  contenedorpoke.classList.add('hide');
   atrapados.classList.add('hide');
   noatrapados.classList.add('hide');
   pokecuenta.classList.add('hide');
@@ -144,7 +158,7 @@ huevos.addEventListener('change', () => {
   promediototal.classList.remove('hide');
 
   const totalHuevo = huevoEclo(pokeData, huevos.value);
-  contenedorPoke.innerHTML = mostrarPoke(totalHuevo);
+  contenedorpoke.innerHTML = mostrarPoke(totalHuevo);
   // div span  inner.htm
 
   const totalCount = totalHuevo.length;
@@ -170,3 +184,12 @@ for (let i = 0; i < POKEMON.pokemon.length; i++) {
 
 document.getElementById('atrapados').innerHTML = 'Pokemones Atrapados ' + ' ' + contadorAtrapado;
 document.getElementById('noatrapados').innerHTML = 'Pokemones no atrapados ' + ' ' + contadorNoatrapado;
+
+// BUSCAR
+/* Haciendo el event target para buscar */
+const nombre = document.getElementById('encontrarpoke');
+nombre.addEventListener('input', event => {
+  const pokemonBuscado = busco(pokeData, event.target.value.toLowerCase());
+  // console.log(pokemonBuscado);
+  contenedorpoke.innerHTML = mostrarPoke(pokemonBuscado); 
+});
