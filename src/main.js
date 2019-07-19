@@ -104,21 +104,24 @@ contenedorpoke.innerHTML = mostrarPoke(pokeData); // PINTANDO CONTENEDOR POKE IN
 
 const ordenandoAbc = document.getElementById('ordenar-abc');
 ordenandoAbc.addEventListener('change', () => {
-  if (ordenandoAbc.value === '0' || ordenandoAbc.value === '1') { // || = O
-    const pokeOrdenado = ordenarPoke(pokeData, ordenandoAbc.value);
-    contenedorpoke.innerHTML = mostrarPoke(pokeOrdenado);
+  if (ordenandoAbc.value === '0') {
+    return contenedorpoke.innerHTML = mostrarPoke(ordenarPoke(pokeData));
   }
+  if (ordenandoAbc.value === '1') {
+    return contenedorpoke.innerHTML = mostrarPoke(ordenarPoke(pokeData).reverse());
+  }  
 });
-
 // ORDEN DE FRECUENCIA DE APARICION
 
 const ordenandoAsc = document.getElementById('ordenar-spawn');
 ordenandoAsc.addEventListener('change', () => {
-  if (ordenandoAsc.value === '2' || ordenandoAsc.value === '3') {
-    const pokeOrdenadoAsc = ordenarAsc(pokeData, ordenandoAsc.value);
-    contenedorpoke.innerHTML = mostrarPoke(pokeOrdenadoAsc);
+  if (ordenandoAsc.value === '2') {
+    return contenedorpoke.innerHTML = mostrarPoke(ordenarAsc(pokeData));
   }
-});
+  if (ordenandoAsc.value === '3') {
+    return contenedorpoke.innerHTML = mostrarPoke(ordenarAsc(pokeData).reverse());
+  }
+}); 
 // TIPOS
 const tipos = document.getElementById('tipos');
 tipos.addEventListener('change', () => {

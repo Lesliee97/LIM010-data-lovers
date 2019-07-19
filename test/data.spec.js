@@ -35,6 +35,36 @@ const dataPoke = [{
     'name': 'Venusaur'
   }]
 }, {
+  'id': 3,
+  'num': '003',
+  'name': 'Venusaur',
+  'img': 'http://www.serebii.net/pokemongo/pokemon/003.png',
+  'type': [
+    'Grass',
+    'Poison'
+  ],
+  'height': '2.01 m',
+  'weight': '100.0 kg',
+  'candy': 'Bulbasaur Candy',
+  'egg': 'Not in Eggs',
+  'spawn_chance': 0.017,
+  'avg_spawns': 1.7,
+  'spawn_time': '11:30',
+  'multipliers': null,
+  'weaknesses': [
+    'Fire',
+    'Ice',
+    'Flying',
+    'Psychic'
+  ],
+  'prev_evolution': [{
+    'num': '001',
+    'name': 'Bulbasaur'
+  }, {
+    'num': '002',
+    'name': 'Ivysaur'
+  }]
+}, {
   'id': 2,
   'num': '002',
   'name': 'Ivysaur',
@@ -68,36 +98,6 @@ const dataPoke = [{
   'next_evolution': [{
     'num': '003',
     'name': 'Venusaur'
-  }]
-}, {
-  'id': 3,
-  'num': '003',
-  'name': 'Venusaur',
-  'img': 'http://www.serebii.net/pokemongo/pokemon/003.png',
-  'type': [
-    'Grass',
-    'Poison'
-  ],
-  'height': '2.01 m',
-  'weight': '100.0 kg',
-  'candy': 'Bulbasaur Candy',
-  'egg': 'Not in Eggs',
-  'spawn_chance': 0.017,
-  'avg_spawns': 1.7,
-  'spawn_time': '11:30',
-  'multipliers': null,
-  'weaknesses': [
-    'Fire',
-    'Ice',
-    'Flying',
-    'Psychic'
-  ],
-  'prev_evolution': [{
-    'num': '001',
-    'name': 'Bulbasaur'
-  }, {
-    'num': '002',
-    'name': 'Ivysaur'
   }]
 }, {
   'id': 4,
@@ -139,61 +139,71 @@ const dataPoke = [{
 // });
 
 describe('busco', () => {
-  it('deberia retornar bulbasaur', () =>{
+  it('deberia retornar bulbasaur', () => {
     expect(busco(dataPoke, 'bul')[0].name).toEqual('Bulbasaur');
   });
 });
 
 describe('ordenarAsc', () => {
-  it('deberia retornar ascendente', () =>{
-    expect(ordenarAsc(dataPoke, '2')[0].name).toEqual('Venusaur');
-  });
-  it('deberia retornar ascendente', () =>{
-    expect(ordenarAsc(dataPoke, '2')[1].name).toEqual('Ivysaur');
-  });
-});
-
-describe('ordenarAsc', () => {
-  it('deberia retornar descendente', () =>{
-    expect(ordenarAsc(dataPoke, '3')[0].name).toEqual('Bulbasaur');
-  });
-  it('deberia retornar descendente', () =>{
-    expect(ordenarAsc(dataPoke, '3')[1].name).toEqual('Charmander');
+  it('deberia retornar ascendente', () => {
+    expect(ordenarAsc(dataPoke)[0].name).toEqual('Venusaur');
   });
 });
 
 describe('ordenarPoke', () => {
-  it('deberia retornar AZ', () =>{
-    expect(ordenarPoke(dataPoke, '0')[0].name).toEqual('Bulbasaur');
-  });
-  it('deberia retornar AZ', () =>{
-    expect(ordenarPoke(dataPoke, '0')[1].name).toEqual('Charmander');
-  });
-});
-
-describe('ordenarPoke', () => {
-  it('deberia retornar ZA', () =>{
-    expect(ordenarPoke(dataPoke, '1')[0].name).toEqual('Venusaur');
-  });
-  it('deberia retornar AZ', () =>{
-    expect(ordenarPoke(dataPoke, '1')[1].name).toEqual('Ivysaur');
+  it('deberia retornar AZ', () => {
+    expect(ordenarPoke(dataPoke)[0].name).toEqual('Bulbasaur');
   });
 });
 
 describe('funcionTipos', () => {
-  it('deberia mostrar los de tipos Grass', () =>{
+  it('deberia mostrar los de tipos Grass', () => {
     expect(funcionTipos(dataPoke, 'Grass')[0].type).toEqual(['Grass', 'Poison']);
   });
 });
 
 describe('funcionDebilidades', () => {
-  it('deberia mostrar las debilidades Water', () =>{
+  it('deberia mostrar las debilidades Water', () => {
     expect(funcionDebilidades(dataPoke, 'Water')[0].weaknesses).toEqual(['Water', 'Ground', 'Rock']);
   });
 });
 
 describe('huevoEclo', () => {
-  it('deberia mostrar los pokemones que tiene huevos de 2km', () =>{
+  it('deberia mostrar los pokemones que tiene huevos de 2km', () => {
+    expect(huevoEclo(dataPoke, '2 km')[0].egg).toEqual('2 km');
+  });
+}); describe('busco', () => {
+  it('deberia retornar bulbasaur', () => {
+    expect(busco(dataPoke, 'bul')[0].name).toEqual('Bulbasaur');
+  });
+});
+
+describe('ordenarAsc', () => {
+  it('deberia retornar ascendente', () => {
+    expect(ordenarAsc(dataPoke)[0].name).toEqual('Venusaur');
+  });
+});
+
+describe('ordenarPoke', () => {
+  it('deberia retornar AZ', () => {
+    expect(ordenarPoke(dataPoke)[0].name).toEqual('Bulbasaur');
+  });
+});
+
+describe('funcionTipos', () => {
+  it('deberia mostrar los de tipos Grass', () => {
+    expect(funcionTipos(dataPoke, 'Grass')[0].type).toEqual(['Grass', 'Poison']);
+  });
+});
+
+describe('funcionDebilidades', () => {
+  it('deberia mostrar las debilidades Water', () => {
+    expect(funcionDebilidades(dataPoke, 'Water')[0].weaknesses).toEqual(['Water', 'Ground', 'Rock']);
+  });
+});
+
+describe('huevoEclo', () => {
+  it('deberia mostrar los pokemones que tiene huevos de 2km', () => {
     expect(huevoEclo(dataPoke, '2 km')[0].egg).toEqual('2 km');
   });
 });
