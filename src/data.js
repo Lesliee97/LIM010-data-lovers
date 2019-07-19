@@ -1,9 +1,33 @@
 /* Manejo de data */
 
+// esta es una función de ejemplo
+// puedes ver como agregamos la función a nuestro objeto global window
+
+// TRAER LOS DATOS DE LA DATA POKEMON
+// const pokeDato = (pokemon) => {
+//   const poke = [];
+//   for (let i = 0; i < pokemon.length; i++) ; // RESULTADO DE LOS 151 POKEMOS
+//   poke.push({
+//     id: pokemon[i].id,
+//     numero: pokemon[i].num,
+//     nombre: pokemon[i].name,
+//     img: pokemon[i].img,
+//     tipo: pokemon[i].type,
+//     altura: pokemon[i].height,
+//     peso: pokemon[i].weight,
+//     caramelos: pokemon[i].candy_count,
+//     huevo: pokemon[i].egg,
+//     aparicion: pokemon[i].avg_spawns,
+//     multipliers: pokemon[i].multipliers,
+//     debilidad: pokemon[i].weaknesses,
+//   });
+//   return poke;
+// };
+
 // ORDENAR DE LA A-Z Z-A
 const ordenarPoke = (data) => {
-  return data.sort((primerPokemon, segundoPokemon) => {
-    if (primerPokemon.name < segundoPokemon.name) {
+  return data.sort((objeto1, objeto2) => {
+    if (objeto1.name < objeto2.name) {
       return -1;
     } else {
       return 1;
@@ -30,13 +54,13 @@ const funcionTipos = (data, tipos) => {
 };
 
 // DEBILIDADES
-const funcionDebilidades = (data, debilidad) => {
+const funcionDebilidades = (data, debilidad)=>{
   return data.filter((elemento) => {
     return elemento.weaknesses.indexOf(debilidad) > -1;
   });
 };
 
-// HUEVOS
+// HUEVOS 
 const huevoEclo = (data, kilometro) => {
   return data.filter((elemet) => {
     return elemet.egg.indexOf(kilometro) > -1;
