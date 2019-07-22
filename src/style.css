@@ -232,12 +232,6 @@ input:focus{
   -webkit-box-shadow:25px 24px 24px -9px rgba(0,0,0,0.75);
   -moz-box-shadow:25px 24px 24px -9px rgba(0,0,0,0.75);
   box-shadow: 25px, 24px 24px -9px rgba(0, 0, 0, 0.75);
-   /* display: flex;
-  align-items: center;
-  flex-direction: row;
-  flex-flow: row wrap;
-  justify-content: space-between; */
-
 }
 
 /*MENU POKE*/
@@ -252,14 +246,11 @@ input:focus{
   cursor: pointer;
   margin: 10px 10px 10px 5px;
   cursor: pointer;  
-  /* Remove this if you don't want the 3D effect */
 }
 
 .img-poke{
   width: 240px;
   height: 200px;
-  /* margin: auto;
-  display: block; */
   background: #4647490c;
 
 }

@@ -57,8 +57,6 @@ ingresar.addEventListener('click', () => {
 // FIN LOGIN
 
 // Mostrar data
-// let pokemon = pokeData
-// let pokemon = arrOrderAZ
 const mostrarPoke = (pokemon) => {
   let mostrar = ' ';
   for (let i = 0; i < pokemon.length; i++) { // MUESTRE LOS 151 POKEMONES
@@ -110,14 +108,6 @@ ordenandoAbc.addEventListener('change', (event) => {
   }  
 });
 // ORDEN DE FRECUENCIA DE APARICION
-
-// const ordenandoAsc = document.getElementById('ordenar-spawn');
-// ordenandoAsc.addEventListener('change', () => {
-//   if (ordenandoAsc.value === '2' || ordenandoAsc.value === '3') {
-//     const pokeOrdenadoAsc = ordenarAsc(pokeData, ordenandoAsc.value);
-//     contenedorpoke.innerHTML = mostrarPoke(pokeOrdenadoAsc);
-//   }
-// });
 const ordenandoAsc = document.getElementById('ordenar-spawn');
 ordenandoAsc.addEventListener('change', (event) => {
   if (event.target.value === '2') {
@@ -201,6 +191,5 @@ document.getElementById('noatrapados').innerHTML = 'Pokemones no atrapados ' + '
 const nombre = document.getElementById('encontrarpoke');
 nombre.addEventListener('input', event => {
   const pokemonBuscado = busco(pokeData, event.target.value.toLowerCase());
-  // console.log(pokemonBuscado);
   contenedorpoke.innerHTML = mostrarPoke(pokemonBuscado);
 });
