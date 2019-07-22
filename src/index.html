@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!--fuente-->
-    <link href="https://fonts.googleapis.com/css?family=Signika|Sniglet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
     <!--Estilos-->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -45,7 +46,7 @@
       </div>
 
       <div class="grupo">
-        <label for="Contraseña">Contraseña:</label>
+        <label id="Contraseña">Contraseña:</label>
         <div class="input-grupo">
           <span><i class="fas fa-key"></i></span> 
           <input type="password" name="contraseña" id="password" placeholder="Contraseña" value="LABORATORIA">
@@ -61,7 +62,7 @@
   
   
   <!--fin Login-->
-    <section class="hide" id="formularios">
+    <section class="hide" id="formularios">                                  
         
         <select class="disemenu" id="ordenar-abc">
           <option value="">ORDENAR ALFB.</option>
@@ -124,7 +125,7 @@
       </section> 
 
       <div class="search-box hide" id="botonbusca">
-        <input class="search-texto hide" id="encontrarpoke" type="text" name="" placeholder="Buscar">
+        <input class="search-texto hide" id="encontrarpoke" type="text" value="" placeholder="Buscar">
         <a class="search-btn hide" href="#"><i class="fas fa-search"></i></a>
       </div>
 

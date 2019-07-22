@@ -33,7 +33,7 @@ body::-webkit-scrollbar-thumb{
 
 body::-webkit-scrollbar-thumb:hover{
   background: #b3b3b3;
-  box-shadow: 0 0 2px 10x rgb(0, 0, 0, 0.2);
+  box-shadow: 0 0 2px  rgb(0, 0, 0, 0.2);
 }
 /* Fin Personalizar el scroll */
 
