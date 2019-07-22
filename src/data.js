@@ -31,7 +31,7 @@ const funcionDebilidades = (data, debilidad) => {
   return data.filter((elemento) => {
     return elemento.weaknesses.indexOf(debilidad) > -1;
     // Si la cadena no existe devuelve -1 
-    // > -1 retorna si el elemento 
+    // > -1 evuelve el índice, dentro del objeto
   });
 };
 
