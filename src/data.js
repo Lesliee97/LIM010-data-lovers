@@ -4,22 +4,6 @@
 // puedes ver como agregamos la función a nuestro objeto global window
 
 // ORDENAR DE LA A-Z Z-A
-// const ordenarPoke = (data, order) => {
-//   const ordenarAZ = data.sort((objeto1, objeto2) => { // CALLBACKS ES UNA FUNCIÓN QUE SE PASA A OTRA FUNCIÓN COMO UN ARGUMENTO, QUE LUEGO SE INVOCA DENTRO DE LA FUNCIÓN EXTERNA PARA COMPLETAR ALGÚN TIPO DE RUTINA O ACCIÓN.
-//     if (objeto1.name > objeto2.name) { // FUNCION COMPRATIVA (COMPARATIVE FUNCTION)ASCENDENTE 
-//       return 1;
-//     } else {
-//       return -1;
-//     }
-//   });
-
-//   if (order === '0') {
-//     return ordenarAZ;
-//   } else {
-//     return ordenarAZ.reverse();
-//   };
-// };
-
 const ordenarPoke = (data) => {
   return data.sort((objeto1, objeto2) => { // CALLBACKS ES UNA FUNCIÓN QUE SE PASA A OTRA FUNCIÓN COMO UN ARGUMENTO, QUE LUEGO SE INVOCA DENTRO DE LA FUNCIÓN EXTERNA PARA COMPLETAR ALGÚN TIPO DE RUTINA O ACCIÓN.
     if (objeto1.name > objeto2.name) { // FUNCION COMPRATIVA (COMPARATIVE FUNCTION)ASCENDENTE 
@@ -29,23 +13,6 @@ const ordenarPoke = (data) => {
     }
   });
 };
-
-// // ORDENAR ORDEN NUMERICO SPAN
-// const ordenarAsc = (data, order) => {
-//   const ordenarMayorMenor = data.sort((numero, aparicion) => {
-//     if (numero.avg_spawns > aparicion.avg_spawns) {
-//       return 1; 
-//     } else {
-//       return -1;
-//     }
-//   });
-
-//   if (order === '2') {
-//     return ordenarMayorMenor;
-//   } else {
-//     return ordenarMayorMenor.reverse();
-//   }
-// };
 
 const ordenarAsc = (data) => {
   return data.sort((numero, aparicion) => numero.avg_spawns - aparicion.avg_spawns);
@@ -63,8 +30,8 @@ const funcionTipos = (data, type) => {
 const funcionDebilidades = (data, debilidad) => {
   return data.filter((elemento) => {
     return elemento.weaknesses.indexOf(debilidad) > -1;
-    // Solo busca mayores a 0 >-1 encuentra lo buscado
-    // -1no encuentra en la data el array
+    // Si la cadena no existe devuelve -1 
+    // > -1 retorna si el elemento 
   });
 };
 
