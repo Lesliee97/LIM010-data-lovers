@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,9 @@
     <!--Iconos-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
     <!--fuente-->
-    <link href="https://fonts.googleapis.com/css?family=Signika|Sniglet&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
     <!--Estilos-->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -46,15 +46,15 @@
       </div>
 
       <div class="grupo">
-        <label for="Contraseña">Contraseña:</label>
+        <label id="Contraseña">Contraseña:</label>
         <div class="input-grupo">
           <span><i class="fas fa-key"></i></span> 
-          <input type="password" name="contraseña" id="contrasena" placeholder="Contraseña" value="LABORATORIA">
+          <input type="password" name="contraseña" id="password" placeholder="Contraseña" value="LABORATORIA">
         </div>
       </div>
 
       <div class="grupo-boton">
-        <button id="capturarcontrasena">INGRESAR</button>
+        <button id="ingresar">INGRESAR</button>
       </div>
 
     </div>
@@ -62,9 +62,7 @@
   
   
   <!--fin Login-->
-    <section class="hide" id="formularios">
-
-      <button class="inicio" id="inicio" value="back" >Inicio</button>
+    <section class="hide" id="formularios">                                  
         
         <select class="disemenu" id="ordenar-abc">
           <option value="">ORDENAR ALFB.</option>
@@ -127,9 +125,8 @@
       </section> 
 
       <div class="search-box hide" id="botonbusca">
-        <input class="search-texto hide" id="encontrarpoke" type="text" name="" placeholder="Buscar">
+        <input class="search-texto hide" id="encontrarpoke" type="text" value="" placeholder="Buscar">
         <a class="search-btn hide" href="#"><i class="fas fa-search"></i></a>
-        
       </div>
 
       <div class="pokemostrar hide" id="atrapados"></div>
