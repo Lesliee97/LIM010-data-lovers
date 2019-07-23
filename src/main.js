@@ -61,34 +61,31 @@ const mostrarPoke = (pokemon) => {
   let mostrar = ' ';
   for (let i = 0; i < pokemon.length; i++) { // MUESTRE LOS 151 POKEMONES
     let llamar = `
-        <div class="flip-card" id="pokeprincipal">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <h2 class="numeroPoke"> N° ${pokemon[i].num}</h2>
-                    <img class="img-poke" src= "${pokemon[i].img}"/>
-                    <h2 class="nombre">${pokemon[i].name}</h2>
-                    <h4 class="tipo">Tipo: ${pokemon[i].type}</h4>
-                    <h4 class="tipo">Frec. Aparición: ${pokemon[i].spawn_chance}</h4>
-                </div>
+      <div class="flip-card" id="pokeprincipal">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h2 class="numeroPoke"> N° ${pokemon[i].num}</h2>
+            <img class="img-poke" src= "${pokemon[i].img}"/>
+            <h2 class="nombre">${pokemon[i].name}</h2>
+            <h4 class="tipo">Tipo: ${pokemon[i].type}</h4>
+            <h4 class="tipo">Frec. Aparición: ${pokemon[i].spawn_chance}</h4>
+          </div>
 
-                <div class="flip-card-back">
-                  <div class="estilos">
-                    <h2 class="nombre-back">${pokemon[i].name}</h2>
-                    <h4 class="caracteristicas">Altura: ${pokemon[i].height}</h4>
-                    <h4 class="caracteristicas">Peso: ${pokemon[i].weight}</h4>
-                    <h4 class="caracteristicas">Huevos: ${pokemon[i].egg}</h4>
-                    <h4 class="caracteristicas">Tiempo Aparición: ${pokemon[i].spawn_time}</h4>
-                    <h4 class="caracteristicas">Debilidades: ${pokemon[i].weaknesses}</h4>
-                                  
-                </div>
-                
-                </div>
+          <div class="flip-card-back">
+            <div class="estilos">
+              <h2 class="nombre-back">${pokemon[i].name}</h2>
+              <h4 class="caracteristicas">Altura: ${pokemon[i].height}</h4>
+              <h4 class="caracteristicas">Peso: ${pokemon[i].weight}</h4>
+              <h4 class="caracteristicas">Huevos: ${pokemon[i].egg}</h4>
+              <h4 class="caracteristicas">Tiempo Aparición: ${pokemon[i].spawn_time}</h4>
+              <h4 class="caracteristicas">Debilidades: ${pokemon[i].weaknesses}</h4>                 
             </div>
-        </div>`;
-
+          </div>
+        </div>
+      </div>
+    `;
     mostrar += llamar;
   }
-
   return mostrar;
 };
 
