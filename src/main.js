@@ -99,9 +99,6 @@ ordenandoAbc.addEventListener('change', (event) => {
   } else {
     contenedorpoke.innerHTML = mostrarPoke(ordenarPoke(pokeData).reverse());
   }
-  if (ordenandoAbc.value === '1') {
-    return contenedorpoke.innerHTML = mostrarPoke(ordenarPoke(pokeData).reverse());
-  }  
 });
 // ORDEN DE FRECUENCIA DE APARICION
 const ordenandoAsc = document.getElementById('ordenar-spawn');
@@ -110,9 +107,6 @@ ordenandoAsc.addEventListener('change', (event) => {
     contenedorpoke.innerHTML = mostrarPoke(ordenarAsc(pokeData));
   } else {
     contenedorpoke.innerHTML = mostrarPoke(ordenarAsc(pokeData).reverse());
-  }
-  if (ordenandoAsc.value === '3') {
-    return contenedorpoke.innerHTML = mostrarPoke(ordenarAsc(pokeData).reverse());
   }
 }); 
 // TIPOS
