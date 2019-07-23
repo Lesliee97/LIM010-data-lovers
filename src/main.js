@@ -43,9 +43,9 @@ ingresar.addEventListener('click', () => {
 
     if (intentos === 0) {
       mensaje.innerHTML = 'La pestaña  se cerrara';
-      setTimeout(() => {
-        let win = window.open('about:blank', '_self'); win.close();
-      }, 3000);
+      setTimeout(() => { // TEMPORIZADOR
+        let win = window.open('about:blank', '_self'); win.close(); 
+      }, 3000); // 2S
     } else {
       mensaje.innerHTML = 'Error al ingresar datos! , te quedan ' + intentos + ' intentos.';
       document.getElementById('usuario').value = '';
