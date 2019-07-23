@@ -172,8 +172,8 @@ for (let i = 0; i < POKEMON.pokemon.length; i++) {
   }
 }
 
-document.getElementById('atrapados').innerHTML = 'Pokemones Atrapados ' + ' ' + contadorAtrapado;
-document.getElementById('noatrapados').innerHTML = 'Pokemones no atrapados ' + ' ' + contadorNoatrapado;
+document.getElementById('atrapados').innerHTML = `Pokemones Atrapados ${contadorAtrapado}`;
+document.getElementById('noatrapados').innerHTML = `Pokemones no atrapados ${contadorNoatrapado}`;
 
 // BUSCAR
 /* Haciendo el event target para buscar */
