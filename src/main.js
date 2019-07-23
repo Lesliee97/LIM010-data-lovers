@@ -96,8 +96,7 @@ const ordenandoAbc = document.getElementById('ordenar-abc');
 ordenandoAbc.addEventListener('change', (event) => {
   if (event.target.value === '0') {
     contenedorpoke.innerHTML = mostrarPoke(ordenarPoke(pokeData));
-  }
-  if (event.target.value === '1') {
+  } else {
     contenedorpoke.innerHTML = mostrarPoke(ordenarPoke(pokeData).reverse());
   }
   if (ordenandoAbc.value === '1') {
@@ -109,8 +108,7 @@ const ordenandoAsc = document.getElementById('ordenar-spawn');
 ordenandoAsc.addEventListener('change', (event) => {
   if (event.target.value === '2') {
     contenedorpoke.innerHTML = mostrarPoke(ordenarAsc(pokeData));
-  }
-  if (event.target.value === '3') {
+  } else {
     contenedorpoke.innerHTML = mostrarPoke(ordenarAsc(pokeData).reverse());
   }
   if (ordenandoAsc.value === '3') {
