@@ -109,8 +109,8 @@ También le agregamos un buscador para que el Usuario pueda encontrar su Pokemon
 
 
 # Prototipo de Alta fidelidad en Figma
-//aqui ira mis imágenes
-//Nuestro link de zeplin
+Link: https://www.figma.com/file/Kg17higAD7VZom9Pvi3Vfx/PokeMania?node-id=1%3A2
+https://www.figma.com/file/d0t3dFwFcuWPpleW9VB7Yf/PokeMania-Menu2?node-id=1%3A2
 
 ## *FEEDBACk*
 En Nuestro prototipo de figma, nos sugirieron que debíamos cambiar el fondo, porque en la segunda página los pokemones no resaltaban.

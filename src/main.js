@@ -112,7 +112,7 @@ ordenandoAsc.addEventListener('change', (event) => {
 // TIPOS
 const tipos = document.getElementById('tipos');
 tipos.addEventListener('change', () => {
-  const typePoke = funcionTipos(pokeData, tipos.value);
+  const typePoke = funcionTipos(pokeData, tipos.value); // ESTOY DANDO VALOR A MI SELECTOR
   contenedorpoke.innerHTML = mostrarPoke(typePoke);
 });
 

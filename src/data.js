@@ -16,7 +16,7 @@ const ordenarPoke = (data) => {
 
 // ORDENAR SPAW
 const ordenarAsc = (data) => {
-  return data.sort((numero, aparicion) => numero.avg_spawns - aparicion.avg_spawns);
+  return data.sort((objeto1, objeto2) => objeto1.avg_spawns - objeto2.avg_spawns);
 };
 
 // TIPOS
@@ -33,6 +33,7 @@ const funcionDebilidades = (data, debilidad) => {
     return elemento.weaknesses.indexOf(debilidad) > -1;
     // Si la cadena no existe devuelve -1 
     // > -1 evuelve el índice, dentro del objeto
+    // indeof me esta devolvoiendo el indice de la data que se esta recorriendo
   });
 };
 
@@ -45,7 +46,8 @@ const huevoEclo = (data, kilometro) => {
 
 // DATA BUSCAR
 const busco = (data, buscado) => {
-  return data.filter(obj => obj.name.toLowerCase().startsWith(buscado));
+  return data.filter(obj => obj.name.toLowerCase().startsWith(buscado)); 
+  // Filter va a crear un array donde va rellenar todos los elementos que pasa un prueba
 };
 
 window.ordenarPoke = ordenarPoke;
@@ -54,3 +56,6 @@ window.funcionTipos = funcionTipos;
 window.funcionDebilidades = funcionDebilidades;
 window.huevoEclo = huevoEclo;
 window.busco = busco;
+
+// change almacena un valor
+// imput captura un valor pero no lo almacena
