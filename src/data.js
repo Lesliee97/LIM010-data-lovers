@@ -14,6 +14,7 @@ const ordenarPoke = (data) => {
   });
 };
 
+// ORDENAR SPAW
 const ordenarAsc = (data) => {
   return data.sort((numero, aparicion) => numero.avg_spawns - aparicion.avg_spawns);
 };
