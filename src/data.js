@@ -3,12 +3,14 @@ const validarEmail = (correo) => {
   correoCorrecto.test(correo);
 };
 const savePost = (arr, ele) => {
-  arr.push(ele);
-  return arr;
+  const resultado = [...arr];
+  resultado.push(ele);
+  return resultado;
 };
 const eliminarObj = (arr, indice) =>{
-  arr.splice(indice, 1);
-  return arr;
+  const newArray = [...arr]
+  newArray.splice(indice, 1);
+  return newArray;
 };
 const editPost = (arr, indice, element) => {
   const result = [...arr];

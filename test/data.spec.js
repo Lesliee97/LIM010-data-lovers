@@ -9,8 +9,7 @@ describe('validarEmail', () => {
   });
 });
 
-const arr = ['blanco', 'negro', 'rosado'];
-const arr2 = ['blanco', 'negro', 'rosado'];
+
 const arr3 = [
   {text: 'blanco'}, 
   {text: 'negro'}, 
@@ -22,10 +21,10 @@ describe('eliminarObj', () => {
     expect(typeof global.eliminarObj).toEqual('function');
   });
   it('deberia eliminar el elemento de un array', () => {
-    expect(global.eliminarObj(arr2, 2)).toEqual(['blanco', 'negro']);
+    expect(global.eliminarObj(arr3, 2)).toEqual([{text: 'blanco'}, {text: 'negro'}, ]);
   });
 });
-const ele = 'morado';
+const ele = {text:'morado'};
 const ele2 = [{}, {value: 'morado'}];
 
 describe('savePost', () => {
@@ -33,7 +32,7 @@ describe('savePost', () => {
     expect(typeof global.savePost).toEqual('function');
   });
   it('debería retornar un array', () => {
-    expect(savePost(arr, ele)).toEqual(['blanco', 'negro', 'rosado', 'morado']);
+    expect(savePost(arr3, ele)).toEqual([{text: 'blanco'}, {text: 'negro'}, {text: 'rosado'}, {text: 'morado'}]);
   });
 });
 

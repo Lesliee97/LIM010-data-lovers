@@ -58,17 +58,17 @@ sectionPost.addEventListener('click', (event) => {
     if (localStorage.getItem('post') !== null && (textInput !== '' || inputFile !== '')) {
       const arrPostLocalStorage = getPosts();
       const arr3 = arrPostLocalStorage.slice();
-      savePost(arr3, objPostTexto);
-      setPosts(arr3);
+      const arrNuevo = savePost(arr3, objPostTexto);
+      setPosts(arrNuevo);
       const arrPostLocalStorage1 = getPosts();
       pintarArray(arrPostLocalStorage1, printerPost);
       inputWritePost.value = '';
       inputFile.value = '';
       preview.src = '';
     } else if (textInput !== '' || inputFile !== '') {
-      savePost(arrPost, objPostTexto);
-      setPosts(arrPost);
-      pintarArray(arrPost, printerPost);
+      const guarda = savePost(arrPost, objPostTexto);
+      setPosts(guarda);
+      pintarArray(guarda, printerPost);
     }
     inputWritePost.value = '';
     inputFile.value = '';
@@ -79,10 +79,10 @@ sectionPost.addEventListener('click', (event) => {
 document.getElementById('input-file').addEventListener('change', () => {
   const file = document.querySelector('input[type=file]').files[0];
   const reader = new FileReader();
-  reader.onloadend = () => {
+  reader.addEventListener('load', () => {
     preview.src = reader.result;
     objPostTexto.src = reader.result;
-  };
+  });
   if (file) {
     reader.readAsDataURL(file);
   } else {
@@ -90,20 +90,20 @@ document.getElementById('input-file').addEventListener('change', () => {
   }
 });
 
-window.onload = () => {
+window.addEventListener('load', () => {
   if (localStorage.getItem('post') !== null) {
     const printer = getPosts();
     pintarArray(printer, printerPost);
   }
-};
+});
 printerPost.addEventListener('click', (event) => {
   const targetMethod = event.target;
   const arrayIndex = targetMethod.id;
   if (targetMethod.name === 'delete') {
     const arrayToDelete = getPosts();
-    eliminarObj(arrayToDelete, arrayIndex);
-    setPosts(arrayToDelete);
-    pintarArray(arrayToDelete, printerPost);
+    const deletePost = eliminarObj(arrayToDelete, arrayIndex);
+    setPosts(deletePost);
+    pintarArray(deletePost, printerPost);
   } else if (targetMethod.name === 'edit') {
     texto[arrayIndex].removeAttribute('readOnly');
   } else if (targetMethod.name === 'save') {
