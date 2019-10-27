@@ -1,115 +1,184 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-plusplus */
-const loggin = document.getElementById('loggin');
-const linkregistro = document.getElementById('linkregistro');
-const registro = document.getElementById('registro');
-const btnRegister = document.getElementById('register');
-const inputFile = document.getElementById('input-file');
-const mailRegisterInput = document.getElementById('register-email');
-const inputWritePost = document.getElementById('post');
-const printerPost = document.getElementById('printer-post');
-const texto = document.getElementsByName('texto');
-const sectionPost = document.getElementById('posts');
-const preview = document.getElementById('posting-img');
-const arrPost = [];
+/* Manejo del DOM */
+const mensaje = document.getElementById('mensaje');
+const usuario = document.getElementById('usuario');
+const password = document.getElementById('password');
+const contenedorpoke = document.getElementById('contenedorpoke');
+const pokeData = POKEMON.pokemon; // ESTAMOS TRAYENDO NUESTRA DATA POKEMON
+const inicio = document.getElementById('inicio');
 
-linkregistro.addEventListener('click', () => {
-  loggin.classList.add('hide');
-  registro.classList.remove('hide');
-});
+const login = document.getElementById('login');
+const formularios = document.getElementById('formularios');
 
-btnRegister.addEventListener('click', () => {
-  validarEmail(mailRegisterInput.value);
-});
+/* principal.classList.add('hide'); */
+document.getElementById('usuario').focus();
 
-// addEventListener
-inputWritePost.addEventListener('keyup', () => {
-  const numCaracteres = inputWritePost.value.length;
-  if (numCaracteres >= 151) {
-    inputWritePost.style.color = '#ff0000';
+// Ingreso login 
+
+let contar = 0;
+let intentos = 3;
+const ingresar = document.getElementById('ingresar');
+
+const elemento = document.getElementById('login');
+const pantallaDos = document.getElementById('formularios');
+pantallaDos.classList.add('hide');
+
+ingresar.addEventListener('click', () => {
+  const usuario = document.getElementById('usuario').value;
+  const password = document.getElementById('password').value;
+
+  if (usuario === 'LABORATORIA' & password === 'LABORATORIA') {
+    elemento.classList.add('hide');
+    pantallaDos.classList.remove('hide');
+    document.getElementById('cabeza').classList.add('hide');
+    document.getElementById('contenedorpoke').classList.remove('hide');
+    document.getElementById('atrapados').classList.remove('hide');
+    document.getElementById('noatrapados').classList.remove('hide');
+    document.getElementById('pokecuenta').classList.add('hide');
+    document.getElementById('promediototal').classList.add('hide');
+    document.getElementById('encontrarpoke').classList.remove('hide');
+    document.getElementById('botonbusca').classList.remove('hide');
   } else {
-    inputWritePost.style.color = '#000000';
-  }
-});
-const getPosts = () => JSON.parse(localStorage.getItem('post'));
-const setPosts = arrayInLs => localStorage.setItem('post', JSON.stringify(arrayInLs));
+    mensaje.classList.remove('hide');
+    intentos--;
 
-const objPostTexto = {
-  text: '',
-  src: '',
-  fecha: new Date(),
-};
-const pintarArray = (obj, ele) => {
-  ele.innerHTML = '';
-  let string = '';
-  for (let indice = 0; indice < obj.length; indice++) {
-    string += `<div class='card'><textArea class = 'template-posts'cols='40' rows='5' width='70%' name='texto' readOnly maxlength='151'>${obj[indice].text}</textArea> <img src= ${obj[indice].src} class= 'imagen'>
-<div class='btn-edit'><div><img src='water-lily.png' class='pencil' id=${indice}></div><div><img src='descargar.png' class='pencil ' name='save' id=${indice}><img src='editar.png' class='pencil' id=${indice} name='edit'><img src='borrar.png' class='pencil' id=${indice} name='delete'></div></div></div>`;
-  }
-  ele.innerHTML = string;
-};
-
-// Asociar el evento de click al padre
-sectionPost.addEventListener('click', (event) => {
-  const textInput = inputWritePost.value;
-  if (event.target.id === 'save-text') {
-    objPostTexto.text = textInput;
-
-    if (localStorage.getItem('post') !== null && (textInput !== '' || inputFile !== '')) {
-      const arrPostLocalStorage = getPosts();
-      const arr3 = arrPostLocalStorage.slice();
-      const arrNuevo = savePost(arr3, objPostTexto);
-      setPosts(arrNuevo);
-      const arrPostLocalStorage1 = getPosts();
-      pintarArray(arrPostLocalStorage1, printerPost);
-      inputWritePost.value = '';
-      inputFile.value = '';
-      preview.src = '';
-    } else if (textInput !== '' || inputFile !== '') {
-      const guarda = savePost(arrPost, objPostTexto);
-      setPosts(guarda);
-      pintarArray(guarda, printerPost);
+    if (intentos === 0) {
+      mensaje.innerHTML = 'La pestaña  se cerrara';
+      setTimeout(() => { // TEMPORIZADOR
+        let win = window.open('about:blank', '_self'); win.close(); 
+      }, 3000); // 2S
+    } else {
+      mensaje.innerHTML = 'Error al ingresar datos! , te quedan ' + intentos + ' intentos.';
+      document.getElementById('usuario').value = '';
+      document.getElementById('password').value = '';
+      document.getElementById('usuario').focus();
     }
-    inputWritePost.value = '';
-    inputFile.value = '';
-    preview.src = '';
   }
 });
+// FIN LOGIN
 
-document.getElementById('input-file').addEventListener('change', () => {
-  const file = document.querySelector('input[type=file]').files[0];
-  const reader = new FileReader();
-  reader.addEventListener('load', () => {
-    preview.src = reader.result;
-    objPostTexto.src = reader.result;
-  });
-  if (file) {
-    reader.readAsDataURL(file);
+// Mostrar data
+const mostrarPoke = (pokemon) => {
+  let mostrar = ' ';
+  for (let i = 0; i < pokemon.length; i++) { // MUESTRE LOS 151 POKEMONES
+    let llamar = `
+      <div class="flip-card" id="pokeprincipal">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h2 class="numeroPoke"> N° ${pokemon[i].num}</h2>
+            <img class="img-poke" src= "${pokemon[i].img}"/>
+            <h2 class="nombre">${pokemon[i].name}</h2>
+            <h4 class="tipo">Tipo: ${pokemon[i].type}</h4>
+            <h4 class="tipo">Frec. Aparición: ${pokemon[i].spawn_chance}</h4>
+          </div>
+
+          <div class="flip-card-back">
+            <div class="estilos">
+              <h2 class="nombre-back">${pokemon[i].name}</h2>
+              <h4 class="caracteristicas">Altura: ${pokemon[i].height}</h4>
+              <h4 class="caracteristicas">Peso: ${pokemon[i].weight}</h4>
+              <h4 class="caracteristicas">Huevos: ${pokemon[i].egg}</h4>
+              <h4 class="caracteristicas">Tiempo Aparición: ${pokemon[i].spawn_time}</h4>
+              <h4 class="caracteristicas">Debilidades: ${pokemon[i].weaknesses}</h4>                 
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    mostrar += llamar;
+  }
+  return mostrar;
+};
+
+contenedorpoke.innerHTML = mostrarPoke(pokeData); // PINTANDO CONTENEDOR POKE INER
+
+// ORDENAR DE LA A-Z Z-A
+const ordenandoAbc = document.getElementById('ordenar-abc');
+ordenandoAbc.addEventListener('change', (event) => {
+  if (event.target.value === '0') {
+    contenedorpoke.innerHTML = mostrarPoke(ordenarPoke(pokeData));
   } else {
-    preview.src = '';
+    contenedorpoke.innerHTML = mostrarPoke(ordenarPoke(pokeData).reverse());
   }
+});
+// ORDEN DE FRECUENCIA DE APARICION
+const ordenandoAsc = document.getElementById('ordenar-spawn');
+ordenandoAsc.addEventListener('change', (event) => {
+  if (event.target.value === '2') {
+    contenedorpoke.innerHTML = mostrarPoke(ordenarAsc(pokeData));
+  } else {
+    contenedorpoke.innerHTML = mostrarPoke(ordenarAsc(pokeData).reverse());
+  }
+}); 
+// TIPOS
+const tipos = document.getElementById('tipos');
+tipos.addEventListener('change', () => {
+  const typePoke = funcionTipos(pokeData, tipos.value); // ESTOY DANDO VALOR A MI SELECTOR
+  contenedorpoke.innerHTML = mostrarPoke(typePoke);
 });
 
-window.addEventListener('load', () => {
-  if (localStorage.getItem('post') !== null) {
-    const printer = getPosts();
-    pintarArray(printer, printerPost);
-  }
+// DEBILIDADES
+const debilidadPoke = document.getElementById('debilidadp');
+debilidadPoke.addEventListener('change', () => {
+  const weakPoke = funcionDebilidades(pokeData, debilidadPoke.value);
+  contenedorpoke.innerHTML = mostrarPoke(weakPoke);
 });
-printerPost.addEventListener('click', (event) => {
-  const targetMethod = event.target;
-  const arrayIndex = targetMethod.id;
-  if (targetMethod.name === 'delete') {
-    const arrayToDelete = getPosts();
-    const deletePost = eliminarObj(arrayToDelete, arrayIndex);
-    setPosts(deletePost);
-    pintarArray(deletePost, printerPost);
-  } else if (targetMethod.name === 'edit') {
-    texto[arrayIndex].removeAttribute('readOnly');
-  } else if (targetMethod.name === 'save') {
-    const arrayToEdit = getPosts();
-    const newArray = editPost(arrayToEdit, arrayIndex, texto);
-    setPosts(newArray);
-    pintarArray(newArray, printerPost);
+
+// SALIR
+const casa = document.getElementById('salir');
+casa.addEventListener('click', () => {
+  login.classList.remove('hide');
+  formularios.classList.add('hide');
+  cabeza.classList.remove('hide');
+  contenedorpoke.classList.add('hide');
+  atrapados.classList.add('hide');
+  noatrapados.classList.add('hide');
+  pokecuenta.classList.add('hide');
+  promediototal.classList.add('hide');
+  botonbusca.classList.add('hide');
+  usuario.value = '';
+  password.value = '';
+});
+
+// HUEVOS
+const huevos = document.getElementById('huevos');
+huevos.addEventListener('change', () => {
+  atrapados.classList.add('hide');
+  noatrapados.classList.add('hide');
+
+  pokecuenta.classList.remove('hide');
+  promediototal.classList.remove('hide');
+
+  const totalHuevo = huevoEclo(pokeData, huevos.value);
+  contenedorpoke.innerHTML = mostrarPoke(totalHuevo);
+
+  const totalCount = totalHuevo.length;
+  pokecuenta.innerHTML = 'Resultados Encontrados: ' + totalCount;
+
+  const promedio = totalCount / 151 * 100;
+  promediototal.innerHTML = 'Porcentaje Total: ' + parseInt(promedio) + '%';
+});
+
+// ATRAPANDO Y NO ATRAPANDO POKEMONES
+
+let contadorAtrapado = 0;
+let contadorNoatrapado = 0;
+
+// RECORRIENDO ARRAY
+for (let i = 0; i < POKEMON.pokemon.length; i++) {
+  if (POKEMON.pokemon[i].multipliers === null) {
+    contadorNoatrapado++;
+  } else {
+    contadorAtrapado++;
   }
+}
+
+document.getElementById('atrapados').innerHTML = `Pokemones Atrapados ${contadorAtrapado}`;
+document.getElementById('noatrapados').innerHTML = `Pokemones no atrapados ${contadorNoatrapado}`;
+
+// BUSCAR
+/* Haciendo el event target para buscar */
+const nombre = document.getElementById('encontrarpoke');
+nombre.addEventListener('input', event => {
+  const pokemonBuscado = busco(pokeData, event.target.value.toLowerCase());
+  contenedorpoke.innerHTML = mostrarPoke(pokemonBuscado);
 });
